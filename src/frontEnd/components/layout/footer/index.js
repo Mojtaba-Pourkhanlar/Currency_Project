@@ -17,7 +17,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div style={{ backgroundColor: "#121519", paddingTop: "50px" }}>
+    <div style={{ backgroundColor: "#080A16", paddingTop: "50px" }}>
       <Container maxWidth="xl">
         <Grid
           container
@@ -38,6 +38,7 @@ const Footer = () => {
               variant="h5"
               mb={3}
               fontSize="17px"
+              color="#fff"
               fontWeight={500}>
               {t("link")}
             </Typography>
@@ -75,7 +76,7 @@ const Footer = () => {
             sx={{ mt: { xs: 0, sm: "30px", lg: 0 } }}>
             <Typography
               variant="h5"
-              component="h5"
+              color="#fff"
               mb={3}
               fontSize="17px"
               fontWeight={500}>
@@ -115,7 +116,7 @@ const Footer = () => {
             sx={{ mt: { xs: 0, sm: "30px", lg: 0 } }}>
             <Typography
               variant="h5"
-              component="h5"
+              color="#fff"
               mb={3}
               fontSize="17px"
               fontWeight={500}>
@@ -149,7 +150,7 @@ const Footer = () => {
             sx={{ mt: { xs: 0, sm: "30px", lg: 0 } }}>
             <Typography
               variant="h5"
-              component="h5"
+              color="#fff"
               mb={3}
               fontSize="17px"
               fontWeight={500}>
@@ -184,6 +185,7 @@ const Footer = () => {
             <Typography
               variant="h5"
               height="1px"
+              color="#fff"
               fontSize="17px"
               fontWeight={500}>
               {t("app")}
@@ -272,11 +274,13 @@ const Footer = () => {
           sx={{ margin: "80px 0px 0" }}
         />
 
-        <Grid container my={2} alignItems="center">
+        <Grid container py={2} alignItems="center">
           <Grid item xs={12} sm={4}>
             <Box display="flex" alignItems="center">
               <Logo />
-              <Typography variant="h4">{t("around")}</Typography>
+              <Typography variant="h4" color="#fff">
+                {t("around")}
+              </Typography>
             </Box>
           </Grid>
           <Grid
@@ -340,7 +344,6 @@ const Footer = () => {
             <img src={footer} alt="imageFooter" width="210px" />
           </Grid>
         </Grid>
-
       </Container>
     </div>
   );

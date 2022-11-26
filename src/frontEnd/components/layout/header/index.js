@@ -42,7 +42,7 @@ export const Header = () => {
 
   return (
     <div>
-      <AppBar position="fixed" sx={{ top: "0", background: "#121519" }}>
+      <AppBar position="fixed" sx={{ top: "0", background: "#080A16" }}>
         <Container maxWidth="xl" disableGutters>
           <Toolbar>
             <Grid

@@ -4,6 +4,7 @@ const en = {
 
 
 
+
   // Footer
   link: "USEFUL LINKS",
   trending: "Trending",

@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { Layout } from "./frontEnd/components/layout";
+import BeforeLogin from "./frontEnd/containers/berforeLogin";
 import { ColorModeContext, useMode } from "./frontEnd/mui/theme";
 
 const AppContainer = () => {
@@ -9,7 +9,7 @@ const AppContainer = () => {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-<Layout/>
+        <BeforeLogin />
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
