@@ -155,7 +155,7 @@ export const themeSettings = (mode) => {
               dark: colors.secondary[700],
             },
             background: {
-              default: colors.primary[800],
+              default: colors.primary[900],
             },
           }
         : {
