@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { CoinsList } from "../../context/Coins";
-import { getAllCoins } from "../../services/api";
+import { getAllCoins, getCoinID } from "../../services/api";
 import { Layout } from "../layout";
 import Banner from "./baner/Banner";
 import { Categories } from "./categories";
@@ -10,7 +10,7 @@ import Coins from "./tabel";
 const Landing = () => {
   const [loading, setLoading] = useState(false);
   const [coins, setCoins] = useState([]);
-
+  const [coinId, setCoinId] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
@@ -19,7 +19,6 @@ const Landing = () => {
       try {
         setLoading(true);
         const { data } = await getAllCoins();
-
         setCoins(data);
         setLoading(false);
       } catch (error) {
@@ -41,6 +40,8 @@ const Landing = () => {
         setSearch,
         page,
         setPage,
+        coinId,
+        setCoinId,
       }}>
       <Layout>
         <div style={{ minHeight: "100vh" }}>

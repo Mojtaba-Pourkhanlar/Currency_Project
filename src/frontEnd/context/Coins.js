@@ -9,5 +9,7 @@ export const CoinsList = createContext({
   setSearch: () => {},
   page: 1,
   setPage: () => {},
+  coinId: [],
+  setCoinId: () => {},
 
 });

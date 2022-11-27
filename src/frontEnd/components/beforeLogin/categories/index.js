@@ -90,7 +90,7 @@ export const Categories = () => {
 
   return (
     <>
-      <Typography variant="h2">Categories</Typography>
+      <Typography variant="h2">{t('categories')}</Typography>
       <Grid container spacing={1} sx={{ boxShadow: "none", my: "40px" }}>
         <Grid item xs={12} sm={12} md={4} sx={gridContainer}>
           <Card sx={cards}>
