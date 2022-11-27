@@ -18,6 +18,6 @@ i18next
     },
 
     backend: {
-      loadPath: "../assets/locales/{{lng}}/translation.json",
+      loadPath: "/assets/locales/{{lng}}/translation.json",
     },
   });

@@ -1,6 +1,7 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { Logo } from "../../../../assets/Logo";
 
 const container = {
   backgroundColor: "#121519",
@@ -17,29 +18,34 @@ export const SideBar = ({ anchor, toggleDrawer }) => {
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}>
-      <Typography variant="h4" sx={{ cursor: "pointer" }}>
+
+      <Box sx={{ cursor: "pointer" , mb:'50px'}}>
         <Link
-        //   to="/home"
+          to="/landing"
           style={{
-            color: "#448c74",
+            color: "#fff",
             textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}>
+          <Logo />
           {t("around")}
         </Link>
-      </Typography>
-
-      <Divider variant="middle" color="danger" sx={{ margin: "20px 0" }} />
-      <Box m="20px 10px">
-        <Typography variant="p" fontWeight={600}>
-          {/* <Link
-            to="/context"
-            style={{ textDecoration: "none", color: "#dbdbdb" }}>
-          </Link> */}
-            {t("context")}
-        </Typography>
       </Box>
 
-      <Divider variant="middle" color="daner" sx={{ margin: "10px 0" }} />
+      <Divider variant="middle" color="#ccc" sx={{ margin: "20px 0" }} />
+      <Box m="20px 10px">
+        <Link to="/login" style={{ textDecoration: "none" }}>
+          <Button variant="contained" color="warning">
+            <Typography variant="h6" color="#fff">
+              {t("Login")}
+            </Typography>
+          </Button>
+        </Link>
+      </Box>
+
+      <Divider variant="middle" color="#ccc" sx={{ margin: "10px 0" }} />
     </Box>
   );
 };

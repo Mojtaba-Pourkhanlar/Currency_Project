@@ -1,5 +1,8 @@
 {
   "around": "Around",
+  "cryptocurrency": "Crypto Currency",
+  "infoCrypto": "Get All The Info Regarding Your Favorite Crypto Currency ",
+  "Login": "LOGIN",
 
   "link": "USEFUL LINKS",
   "trending": "Trending",
@@ -26,5 +29,4 @@
 
   "showroom": "SHOWROOM",
   "app": "DOWNLOAD OUR APP"
-
 }

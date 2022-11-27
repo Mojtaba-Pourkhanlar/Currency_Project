@@ -130,9 +130,9 @@ export const themeSettings = (mode) => {
         ? {
             // palette values for dark mode
             grey: {
-              light: colors.grey[300],
+              light: colors.grey[900],
               main: colors.grey[600],
-              dark: colors.grey[900],
+              dark: colors.grey[300],
             },
             error: {
               light: colors.error[300],
