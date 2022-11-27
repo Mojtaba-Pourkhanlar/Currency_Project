@@ -6,11 +6,11 @@ import { Layout } from "../layout";
 import Banner from "./baner/Banner";
 import { Categories } from "./categories";
 import Coins from "./tabel";
+import FAQ from "./faq";
 
 const Landing = () => {
   const [loading, setLoading] = useState(false);
   const [coins, setCoins] = useState([]);
-  const [coinId, setCoinId] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
@@ -40,8 +40,6 @@ const Landing = () => {
         setSearch,
         page,
         setPage,
-        coinId,
-        setCoinId,
       }}>
       <Layout>
         <div style={{ minHeight: "100vh" }}>
@@ -49,6 +47,7 @@ const Landing = () => {
           <Container maxWidth="lg">
             <Categories />
             <Coins />
+            <FAQ/>
           </Container>
         </div>
       </Layout>

@@ -32,7 +32,7 @@ const Card = ({ image, title, price, market }) => {
 
       <Box>
         <Typography variant="h3" sx={{ color: "#fff" }}>
-          {market}
+          ${market}
         </Typography>
       </Box>
     </Box>
