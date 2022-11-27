@@ -29,7 +29,7 @@ export const Header = () => {
     setIsOpen({ ...isOpen, [anchor]: open });
   };
 
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const Hamburger = styled("div")(({ theme }) => ({
     [theme.breakpoints.up("md")]: {

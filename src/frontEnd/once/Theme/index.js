@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Box, useTheme } from "@mui/material";
 import { ColorModeContext } from "../../mui/theme";
-import { LightModeOutlined, DarkModeOutlined } from "@mui/icons-material";
 // Images
-import moon from "../../assets/images/Icons/moon.svg";
-import sun from "../../assets/images/Icons/sun.svg";
+import moon from "../../assets/images/icons/moon.svg";
+import sun from "../../assets/images/icons/sun.svg";
+
 const Theme = () => {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
