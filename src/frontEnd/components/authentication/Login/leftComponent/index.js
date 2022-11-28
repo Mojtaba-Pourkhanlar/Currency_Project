@@ -48,7 +48,7 @@ const FormContainer = () => {
       .then((res) => {
         if (res.status === 200) {
           notify("login Successfully 😉", "success");
-          window.location = "/landing";
+          window.location = "/dashboard";
           const users = res.data.result.name;
           const token = res.data.token;
           const result = res.data.result;

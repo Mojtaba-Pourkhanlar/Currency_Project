@@ -1,4 +1,3 @@
-import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Landing from "../../components/beforeLogin/Landing";
 import CoinID from "../../components/beforeLogin/tabel/CoinID";

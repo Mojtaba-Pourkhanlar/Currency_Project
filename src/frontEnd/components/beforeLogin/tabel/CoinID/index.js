@@ -12,11 +12,12 @@ import {
 import TableCoinId from "./TableCoinId";
 import { CoinsList } from "../../../../context/Coins";
 import { getCoinID } from "../../../../services/api";
+import { useTranslation } from "react-i18next";
 
 const CoinID = () => {
   const { setLoading, loading } = useContext(CoinsList);
   const [coinId, setCoinId] = useState([]);
-
+  const { t } = useTranslation();
   const theme = useTheme();
   const colors = theme.palette;
   const { id } = useParams();
@@ -153,7 +154,7 @@ const CoinID = () => {
             <>
               <Link to={"/landing"} style={{ textDecoration: "none" }}>
                 <Button variant="contained" color="warning">
-                  Back To Home
+                  {t("back")}
                 </Button>
               </Link>
             </>
