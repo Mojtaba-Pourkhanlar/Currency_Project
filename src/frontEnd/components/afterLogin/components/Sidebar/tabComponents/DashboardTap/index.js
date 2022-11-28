@@ -1,7 +1,7 @@
 import { Box, Grid, Typography, useTheme } from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ProgressCircle, Spinner } from "../../../../../../helpers";
+import { Spinner } from "../../../../../../helpers";
 import { Header } from "../Header";
 
 export const DashboardTap = () => {

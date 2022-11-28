@@ -1,12 +1,13 @@
 import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { CoinsList } from "../../context/Coins";
-import { getAllCoins, getCoinID } from "../../services/api";
+import { getAllCoins } from "../../services/api";
 import { Layout } from "../layout";
 import Banner from "./baner/Banner";
 import { Categories } from "./categories";
 import Coins from "./tabel";
 import FAQ from "./faq";
+import { BackTop, ScrollTop } from "../../once";
 
 const Landing = () => {
   const [loading, setLoading] = useState(false);
@@ -47,9 +48,11 @@ const Landing = () => {
           <Container maxWidth="lg">
             <Categories />
             <Coins />
-            <FAQ/>
+            <FAQ />
           </Container>
         </div>
+        <BackTop />
+        <ScrollTop />
       </Layout>
     </CoinsList.Provider>
   );

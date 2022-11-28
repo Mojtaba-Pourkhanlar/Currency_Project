@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Landing from "../../components/beforeLogin/Landing";
 import CoinID from "../../components/beforeLogin/tabel/CoinID";
+import { NotFound } from "../../once";
 import { Login } from "../authentication/Login";
 import { Register } from "../authentication/Registre";
 
@@ -13,6 +14,7 @@ const BeforeLogin = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/coin/:id" element={<CoinID />} />
         <Route path="/" element={<Navigate to="/landing" />} />
+        <Route path="*" element={<NotFound demo="landing" />} />
       </Routes>
     </>
   );

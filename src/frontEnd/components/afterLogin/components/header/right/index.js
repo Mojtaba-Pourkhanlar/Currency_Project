@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
-import { Language } from "../../../../../once/ChangeLanguage";
-import Theme from "../../../../../once/Theme";
+import { Language, Theme } from "../../../../../once";
 
 export const Right = () => {
 

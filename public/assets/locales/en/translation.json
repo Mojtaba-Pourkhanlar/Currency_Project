@@ -64,6 +64,7 @@
   "manageTeam": "Manage Team",
   "chart": "Chart",
   "anoutMe": "About Me",
-"readMore":"Read More",
-"readLess":"Read Less"
+  "readMore": "Read More",
+  "readLess": "Read Less",
+"notFound":"Not Found...!😒"
 }

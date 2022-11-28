@@ -5,7 +5,7 @@ import { ColorModeContext } from "../../mui/theme";
 import moon from "../../assets/images/icons/moon.svg";
 import sun from "../../assets/images/icons/sun.svg";
 
-const Theme = () => {
+export const Theme = () => {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
 
@@ -20,4 +20,4 @@ const Theme = () => {
   );
 };
 
-export default Theme;
+

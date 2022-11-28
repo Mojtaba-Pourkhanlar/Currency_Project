@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import React, { useState } from "react";
 import { DasboardData } from "../../context/Dahsboard";
+import { SpeedDialDrop } from "../../once";
 import { Header } from "./components/header";
 import { SideBar } from "./components/Sidebar/SideBar";
 
@@ -25,6 +26,7 @@ const Dashboard = () => {
         <Container maxWidth="xl">
           <SideBar />
         </Container>
+        <SpeedDialDrop />
       </div>
     </DasboardData.Provider>
   );

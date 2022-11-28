@@ -6,8 +6,6 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { useContext } from "react";
-
 import react from "../../../../../../assets/images/skill/react.svg";
 import js from "../../../../../../assets/images/skill/js.svg";
 import next from "../../../../../../assets/images/skill/next.svg";
@@ -62,7 +60,11 @@ export const AboutTab = () => {
       <Header title={t("mojtaba")} subtitle={t("mojtabaDec")} />
 
       <>
-        <Grid container display="flex" alignItems="center">
+        <Grid
+          container
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between">
           <Grid
             item
             xs={12}
@@ -70,6 +72,7 @@ export const AboutTab = () => {
             align="center"
             sx={{ display: { xs: "block", lg: "none" } }}>
             <img
+              style={{ borderRadius: "15px 70px" }}
               src={require("../../../../../../assets/images/gallery/01.JPG")}
               alt="imageMe"
               width="350px"

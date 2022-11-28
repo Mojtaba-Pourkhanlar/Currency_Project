@@ -15,7 +15,7 @@ export const Register = () => {
         md={7}
         lg={7}
         sx={{
-          backgroundColor: "#616161",
+          backgroundColor: "#0D1024",
           minHeight: "100vh",
           display: {
             xs: "none",

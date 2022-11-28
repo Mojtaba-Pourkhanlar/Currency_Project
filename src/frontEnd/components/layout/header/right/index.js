@@ -1,9 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import { Language } from "../../../../once/ChangeLanguage";
-import { Person } from "@mui/icons-material";
+import { Language ,Theme } from "../../../../once";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Theme from "../../../../once/Theme";
 
 export const Right = () => {
   const {  t } = useTranslation();
