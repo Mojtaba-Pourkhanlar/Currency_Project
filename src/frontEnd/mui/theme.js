@@ -49,6 +49,17 @@ export const tokens = (mode) => ({
           800: "#5E5500",
           900: "#3F3800",
         },
+        success: {
+          100: "#4CAF50",
+          200: "#449E48",
+          300: "#3D8C40",
+          400: "#357B38",
+          500: "#2E6930",
+          600: "#265828",
+          700: "#1E4620",
+          800: "#173518",
+          900: "#0F2310",
+        },
         secondary: {
           100: "#9C27B0",
           200: "#8A229C",
@@ -106,6 +117,17 @@ export const tokens = (mode) => ({
           800: "#FFE81C",
           900: "#FFEB3B",
         },
+        success: {
+          100: "#0F2310",
+          200: "#173518",
+          300: "#1E4620",
+          400: "#265828",
+          500: "#2E6930",
+          600: "#357B38",
+          700: "#3D8C40",
+          800: "#449E48",
+          900: "#4CAF50",
+        },
         secondary: {
           100: "#110414",
           200: "#220927",
@@ -130,29 +152,35 @@ export const themeSettings = (mode) => {
         ? {
             // palette values for dark mode
             grey: {
-              light: colors.grey[900],
-              main: colors.grey[600],
-              dark: colors.grey[300],
-            },
-            error: {
-              light: colors.error[300],
-              main: colors.error[500],
-              dark: colors.error[700],
-            },
-            warning: {
-              light: colors.warning[200],
-              main: colors.warning[500],
-              dark: colors.warning[800],
+              dark: colors.grey[800],
+              main: colors.grey[500],
+              light: colors.grey[200],
             },
             primary: {
-              light: colors.primary[200],
+              dark: colors.primary[800],
               main: colors.primary[500],
-              dark: colors.primary[700],
+              light: colors.primary[200],
             },
+            error: {
+              dark: colors.error[800],
+              main: colors.error[500],
+              light: colors.error[200],
+            },
+            warning: {
+              dark: colors.warning[800],
+              main: colors.warning[500],
+              light: colors.warning[200],
+            },
+            success: {
+              dark: colors.success[800],
+              main: colors.success[500],
+              light: colors.success[200],
+            },
+
             secondary: {
-              light: colors.secondary[200],
+              dark: colors.secondary[800],
               main: colors.secondary[500],
-              dark: colors.secondary[700],
+              light: colors.secondary[200],
             },
             background: {
               default: colors.primary[900],
@@ -161,29 +189,34 @@ export const themeSettings = (mode) => {
         : {
             // palette values for light mode
             grey: {
-              dark: colors.grey[100],
-              main: colors.grey[200],
-              light: colors.grey[400],
+              light: colors.grey[200],
+              main: colors.grey[500],
+              dark: colors.grey[700],
             },
             primary: {
               dark: colors.primary[200],
-              main: colors.primary[400],
-              light: colors.primary[600],
+              main: colors.primary[500],
+              light: colors.primary[800],
             },
             error: {
               dark: colors.error[200],
-              main: colors.error[400],
-              light: colors.error[600],
+              main: colors.error[500],
+              light: colors.error[800],
             },
             warning: {
               dark: colors.warning[200],
-              main: colors.warning[400],
-              light: colors.warning[600],
+              main: colors.warning[500],
+              light: colors.warning[800],
+            },
+            success: {
+              dark: colors.success[200],
+              main: colors.success[500],
+              light: colors.success[800],
             },
             secondary: {
               dark: colors.secondary[200],
-              main: colors.secondary[400],
-              light: colors.secondary[700],
+              main: colors.secondary[500],
+              light: colors.secondary[800],
             },
             background: {
               default: colors.grey[900],

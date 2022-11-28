@@ -1,12 +1,18 @@
 import { Tabs, Tab, Box, Typography, useTheme } from "@mui/material";
 import {
-  FaceRounded,
+  PeopleOutlined,
   HomeOutlined,
-  ConnectWithoutContactRounded,
+  Face,
+  BarChart,
 } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { DasboardData } from "../../../../../context/Dahsboard";
 
-const SidebarTabs = ({ setDrawerOpen, value, handleChange }) => {
+const SidebarTabs = () => {
+  const { setDrawerOpen, pageNumber, handlePageNumber } =
+    useContext(DasboardData);
+
   const { t, i18n } = useTranslation();
   const { language } = i18n;
   const theme = useTheme();
@@ -20,7 +26,7 @@ const SidebarTabs = ({ setDrawerOpen, value, handleChange }) => {
   };
 
   const demo = {
-    backgroundColor: colors.grey.light,
+    backgroundColor: colors.grey[900],
     borderRadius: 2,
     my: 1,
     mx: 2,
@@ -46,10 +52,10 @@ const SidebarTabs = ({ setDrawerOpen, value, handleChange }) => {
       variant="scrollable"
       scrollButtons="auto"
       allowScrollButtonsMobile
-      textColor="grey"
+      textColor="inherit"
       indicatorColor={colors.primary[500]}
-      value={value}
-      onChange={handleChange}>
+      value={pageNumber}
+      onChange={handlePageNumber}>
       <Tab
         label={
           <Box sx={design}>
@@ -66,7 +72,7 @@ const SidebarTabs = ({ setDrawerOpen, value, handleChange }) => {
       <Tab
         label={
           <Box sx={design}>
-            <FaceRounded sx={{ m: "0 10px" }} />
+            <PeopleOutlined sx={{ m: "0 10px" }} />
             <Typography>{t("Manage Team")}</Typography>
           </Box>
         }
@@ -79,7 +85,7 @@ const SidebarTabs = ({ setDrawerOpen, value, handleChange }) => {
       <Tab
         label={
           <Box sx={design}>
-            <ConnectWithoutContactRounded sx={{ m: "0 10px" }} />
+            <BarChart sx={{ m: "0 10px" }} />
             <Typography>{t("Chart")}</Typography>
           </Box>
         }
@@ -91,7 +97,7 @@ const SidebarTabs = ({ setDrawerOpen, value, handleChange }) => {
       <Tab
         label={
           <Box sx={design}>
-            <ConnectWithoutContactRounded sx={{ m: "0 10px" }} />
+            <Face sx={{ m: "0 10px" }} />
             <Typography>{t("About me")}</Typography>
           </Box>
         }

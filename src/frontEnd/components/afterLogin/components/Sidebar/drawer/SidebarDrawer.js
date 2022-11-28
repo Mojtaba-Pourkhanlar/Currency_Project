@@ -1,7 +1,10 @@
 import { Drawer } from "@mui/material";
+import { useContext } from "react";
+import { DasboardData } from "../../../../../context/Dahsboard";
 import { SidebarContent } from "../sidbarComponents";
 
-export const SidebarDrawer = ({ setDrawerOpen, drawerOpen, value, handleChange }) => {
+export const SidebarDrawer = () => {
+  const { drawerOpen, setDrawerOpen } = useContext(DasboardData);
 
   return (
     <Drawer
@@ -20,11 +23,7 @@ export const SidebarDrawer = ({ setDrawerOpen, drawerOpen, value, handleChange }
           lg: "none",
         },
       }}>
-      <SidebarContent
-        value={value}
-        handleChange={handleChange}
-        setDrawerOpen={setDrawerOpen}
-      />
+      <SidebarContent/>
     </Drawer>
   );
 };

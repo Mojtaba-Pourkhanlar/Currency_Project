@@ -13,4 +13,3 @@ export const TabPanel = (props) => {
     </div>
   );
 };
-

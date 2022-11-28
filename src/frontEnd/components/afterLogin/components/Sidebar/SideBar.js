@@ -1,15 +1,12 @@
 import { Grid, useTheme } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DasboardData } from "../../../../context/Dahsboard";
 import { Sidebar } from "./sidbarComponents";
 import { AboutTab, ChartTab, DashboardTap, ManageTab } from "./tabComponents";
 import { TabPanel } from "./TabPanel";
 
 export const SideBar = () => {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (event, newPage) => {
-    setValue(newPage);
-  };
+  const { pageNumber } = useContext(DasboardData);
 
   const theme = useTheme();
   const colors = theme.palette;
@@ -28,7 +25,7 @@ export const SideBar = () => {
             backgroundColor: colors.primary,
             width: "inherit",
           }}>
-          <Sidebar handleChange={handleChange} value={value} />
+          <Sidebar />
         </Grid>
         <Grid
           item
@@ -42,20 +39,20 @@ export const SideBar = () => {
             transition: "all 0.50s linear",
             textAlign: "center",
           }}>
-          <TabPanel value={value} index={0}>
-            <DashboardTap/>
+          <TabPanel value={pageNumber} index={0}>
+            <DashboardTap />
           </TabPanel>
 
-          <TabPanel value={value} index={1}>
-            <ManageTab/>
+          <TabPanel value={pageNumber} index={1}>
+            <ManageTab />
           </TabPanel>
 
-          <TabPanel value={value} index={2}>
-            <ChartTab/>
+          <TabPanel value={pageNumber} index={2}>
+            <ChartTab />
           </TabPanel>
 
-          <TabPanel value={value} index={3}>
-            <AboutTab/>
+          <TabPanel value={pageNumber} index={3}>
+            <AboutTab />
           </TabPanel>
         </Grid>
       </Grid>

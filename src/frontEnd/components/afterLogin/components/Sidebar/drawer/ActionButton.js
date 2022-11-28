@@ -1,7 +1,10 @@
 import { Fab, Box } from "@mui/material";
 import { MenuRounded } from "@mui/icons-material";
+import { useContext } from "react";
+import { DasboardData } from "../../../../../context/Dahsboard";
 
-export const ActionButton = ({setDrawerOpen}) => {
+export const ActionButton = () => {
+  const { setDrawerOpen } = useContext(DasboardData);
 
   return (
     <Box
@@ -24,5 +27,3 @@ export const ActionButton = ({setDrawerOpen}) => {
     </Box>
   );
 };
-
-
