@@ -1,9 +1,12 @@
 import { Box, Divider, Typography, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { SidebarTabs } from "./";
 
 const SidebarContent = () => {
   const name = JSON.parse(localStorage.getItem("user"));
   const theme = useTheme();
+  const { t } = useTranslation();
+
   const textColor = {
     color: theme.palette.mode === "dark" ? "#fff" : "#000",
     m: "0px 0 35px",
@@ -17,11 +20,11 @@ const SidebarContent = () => {
         py: 4,
       }}>
       <Typography variant="h5" sx={textColor}>
-        Hi
-        <span style={{ margin: "0 10px", color: "red" }}>
+        {t("hi")}
+        <span style={{ margin: "10px", color: "red" }}>
           <u>{name.toUpperCase()}</u>
         </span>
-        Welcome
+        {t("welcome")}
       </Typography>
 
       <Divider

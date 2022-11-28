@@ -60,7 +60,7 @@ const SidebarTabs = () => {
         label={
           <Box sx={design}>
             <HomeOutlined sx={{ m: "0 10px" }} />
-            <Typography>{t("Dashboard")}</Typography>
+            <Typography>{t("dashboard")}</Typography>
           </Box>
         }
         iconPosition="start"
@@ -73,7 +73,7 @@ const SidebarTabs = () => {
         label={
           <Box sx={design}>
             <PeopleOutlined sx={{ m: "0 10px" }} />
-            <Typography>{t("Manage Team")}</Typography>
+            <Typography>{t("manageTeam")}</Typography>
           </Box>
         }
         sx={demo}
@@ -86,7 +86,7 @@ const SidebarTabs = () => {
         label={
           <Box sx={design}>
             <BarChart sx={{ m: "0 10px" }} />
-            <Typography>{t("Chart")}</Typography>
+            <Typography>{t("chart")}</Typography>
           </Box>
         }
         iconPosition="start"
@@ -98,7 +98,7 @@ const SidebarTabs = () => {
         label={
           <Box sx={design}>
             <Face sx={{ m: "0 10px" }} />
-            <Typography>{t("About me")}</Typography>
+            <Typography>{t("anoutMe")}</Typography>
           </Box>
         }
         iconPosition="start"

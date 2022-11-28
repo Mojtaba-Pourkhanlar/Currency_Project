@@ -3,50 +3,52 @@ import React from "react";
 import { Header } from "../Header";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockDataContacts } from "../../../../../../once/chartData/mockData";
+import { useTranslation } from "react-i18next";
 
 export const ManageTab = () => {
   const theme = useTheme();
   const colors = theme.palette;
+  const { t } = useTranslation();
 
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registrar ID" },
+    { field: "id", headerName: `${t("id")}`, flex: 0.5 },
+    { field: "registrarId", headerName: `${t("registrarID")}` },
     {
       field: "name",
-      headerName: "Name",
+      headerName: `${t("name")}`,
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
-      headerName: "Age",
+      headerName: `${t("age")}`,
       type: "number",
       headerAlign: "left",
       align: "left",
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: `${t("phone")}`,
       flex: 1,
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: `${t("email")}`,
       flex: 1,
     },
     {
       field: "address",
-      headerName: "Address",
+      headerName: `${t("assress")}`,
       flex: 1,
     },
     {
       field: "city",
-      headerName: "City",
+      headerName: `${t("city")}`,
       flex: 1,
     },
     {
       field: "zipCode",
-      headerName: "Zip Code",
+      headerName: `${t("zip")}`,
       flex: 1,
     },
   ];
@@ -54,8 +56,8 @@ export const ManageTab = () => {
   return (
     <>
       <Header
-        title="CONTACTS"
-        subtitle="List of Contacts for Future Reference"
+        title={t('contacts')}
+        subtitle={t('contactsDec')}
       />
       <Box
         m="-17px 0 0 0"

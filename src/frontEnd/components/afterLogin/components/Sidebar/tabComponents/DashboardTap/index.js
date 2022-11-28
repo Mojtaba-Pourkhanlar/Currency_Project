@@ -1,13 +1,17 @@
 import { Box, Grid, Typography, useTheme } from "@mui/material";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ProgressCircle, Spinner } from "../../../../../../helpers";
 import { Header } from "../Header";
 
 export const DashboardTap = () => {
-  const [state, ] = useState(false);
+  const [state] = useState(false);
+  const { t } = useTranslation();
 
   const theme = useTheme();
   const colors = theme.palette;
+
+
   const test = {
     backgroundColor: colors.grey[900],
     height: "180px",
@@ -16,13 +20,12 @@ export const DashboardTap = () => {
     backgroundColor: colors.grey[900],
     height: "400px",
   };
+
   return (
     <>
-      <Header title="Dashboard" subtitle="Welcome to your dashboard" />
-
+      <Header title="dashboard" subtitle="dashboardDec" />
       {state ? (
         <>
-          {" "}
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
               <Box sx={test}>Comming Soon</Box>
@@ -42,13 +45,12 @@ export const DashboardTap = () => {
             <Grid item xs={12} md={4}>
               <Box sx={test02}>Comming Soon</Box>
             </Grid>
-          </Grid>{" "}
+          </Grid>
         </>
       ) : (
         <>
           <Spinner />
-
-          <Typography>Comming Soon</Typography>
+          <Typography>{t("coming")}</Typography>
         </>
       )}
     </>

@@ -51,7 +51,7 @@ const ItemGrid = ({ title, images }) => {
 };
 
 export const AboutTab = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const leftRight = {
     textAlign: `${i18n.language === "en" ? "left" : "right"}`,
@@ -59,10 +59,7 @@ export const AboutTab = () => {
 
   return (
     <>
-      <Header
-        title="Mojtaba Pourkhanlar"
-        subtitle="Front End Developer(React.js)"
-      />
+      <Header title={t("mojtaba")} subtitle={t("mojtabaDec")} />
 
       <>
         <Grid container display="flex" alignItems="center">
@@ -84,8 +81,8 @@ export const AboutTab = () => {
               variant="h6"
               align="justify"
               sx={{ lineHeight: "34px" }}>
-              {i18n.language === "en" ? (
-                <ReadMoreLess limit={350}>
+              {i18n.language === "fa" ? (
+                <ReadMoreLess limit={335}>
                   خب بزار همین اول موضوع رو روشن بکنم، من از رشته ای غیر از
                   کامپیوتر وارد این حوزه شدم.اواخر سال 1397 بود که کارشناسی
                   تربیت بدنی رو گرفتم و مثل خیلی از بچه های این حوزه شوق فعالیت
@@ -123,7 +120,7 @@ export const AboutTab = () => {
                   میکنم. میدونم خیلی پر حرفی کردم معذرت.
                 </ReadMoreLess>
               ) : (
-                <ReadMoreLess limit={350}>
+                <ReadMoreLess limit={335}>
                   Well, let me clarify the matter first, I entered this field
                   from a field other than computers. It was at the end of 2018
                   that I got a bachelor's degree in physical education and like
@@ -192,7 +189,7 @@ export const AboutTab = () => {
 
       <>
         <Typography variant="h3" mb="20px" sx={leftRight}>
-          Skils
+          {t("skils")}
         </Typography>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={4} md={3} lg={2}>
@@ -243,7 +240,7 @@ export const AboutTab = () => {
 
       <>
         <Typography variant="h3" my="50px" sx={leftRight}>
-          Contact With Me
+          {t("contactMe")}
         </Typography>
         <Grid container>
           <Grid item xs={12} sm={6}>
@@ -251,7 +248,7 @@ export const AboutTab = () => {
               <img width="150px" src={github} alt="github.com" />
             </a>
             <Typography variant="h5" my={3}>
-              Github
+              {t("github")}
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -259,7 +256,7 @@ export const AboutTab = () => {
               <img width="150px" src={linkedin} alt="www.linkedin.com" />
             </a>
             <Typography variant="h5" my={3}>
-              Linkedin
+              {t("linkdin")}
             </Typography>
           </Grid>
         </Grid>

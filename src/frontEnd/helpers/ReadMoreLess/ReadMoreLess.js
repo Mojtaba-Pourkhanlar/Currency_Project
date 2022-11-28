@@ -28,7 +28,7 @@ export const ReadMoreLess = ({ limit, children }) => {
               onClick={toggleReadMore}
               variant="text"
               startIcon={<KeyboardArrowDown />}
-              color="secondary">
+              color="success">
               {t("readMore")}
             </Button>
           ) : (
@@ -36,7 +36,7 @@ export const ReadMoreLess = ({ limit, children }) => {
               onClick={toggleReadMore}
               variant="text"
               startIcon={<KeyboardArrowUp />}
-              color="secondary">
+              color="error">
               {t("readLess")}
             </Button>
           )}
