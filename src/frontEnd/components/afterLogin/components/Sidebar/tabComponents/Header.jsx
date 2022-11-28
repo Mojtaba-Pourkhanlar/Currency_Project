@@ -5,7 +5,7 @@ export const Header = ({ title, subtitle }) => {
   const colors = theme.palette;
 
   return (
-    <Box mb="30px">
+    <Box mb="30px" mt="10px" align="start">
       <Typography
         variant="h2"
         color={colors.grey.light}

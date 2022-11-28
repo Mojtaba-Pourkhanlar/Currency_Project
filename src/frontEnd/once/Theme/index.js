@@ -10,7 +10,7 @@ const Theme = () => {
   const colorMode = useContext(ColorModeContext);
 
   return (
-    <Box onClick={colorMode.toggleColorMode}>
+    <Box sx={{cursor:'pointer'}} onClick={colorMode.toggleColorMode}>
       {theme.palette.mode === "dark" ? (
         <img src={moon} width={28} height={28} alt="sun" />
       ) : (

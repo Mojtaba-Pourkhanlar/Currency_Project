@@ -1,12 +1,12 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography, useTheme } from "@mui/material";
 import { SidebarTabs } from "./";
 
 const SidebarContent = () => {
   const name = JSON.parse(localStorage.getItem("user"));
-
+  const theme = useTheme();
   const textColor = {
-    color: "#fff",
-m:'20px 0 35px'
+    color: theme.palette.mode === "dark" ? "#fff" : "#000",
+    m: "0px 0 35px",
   };
 
   return (
@@ -16,8 +16,7 @@ m:'20px 0 35px'
         textAlign: "center",
         py: 4,
       }}>
-
-      <Typography variant="h6" sx={textColor}>
+      <Typography variant="h5" sx={textColor}>
         Hi
         <span style={{ margin: "0 10px", color: "red" }}>
           <u>{name.toUpperCase()}</u>
@@ -25,11 +24,19 @@ m:'20px 0 35px'
         Welcome
       </Typography>
 
-      <Divider variant="middle" color="#fff" sx={{ mt: 3, mb: 2 }} />
+      <Divider
+        variant="middle"
+        color={theme.palette.grey.dark}
+        sx={{ mt: 8.5, mb: 2 }}
+      />
 
-      <SidebarTabs/>
+      <SidebarTabs />
 
-      <Divider variant="middle" color="#fff" sx={{ mt: 2 }} />
+      <Divider
+        variant="middle"
+        color={theme.palette.grey.dark}
+        sx={{ mt: 2 }}
+      />
     </Box>
   );
 };

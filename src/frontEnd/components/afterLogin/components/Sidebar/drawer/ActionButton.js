@@ -21,7 +21,7 @@ export const ActionButton = () => {
         aria-label="Sidebar"
         size="small"
         onClick={() => setDrawerOpen(true)}
-        sx={{ backgroundColor: "red", m: 2 }}>
+        sx={{ backgroundColor: "red", m: 2, borderRadius:'9px'  }}>
         <MenuRounded />
       </Fab>
     </Box>

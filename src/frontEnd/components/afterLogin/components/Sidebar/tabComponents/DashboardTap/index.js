@@ -4,7 +4,7 @@ import { ProgressCircle, Spinner } from "../../../../../../helpers";
 import { Header } from "../Header";
 
 export const DashboardTap = () => {
-const [state , setState] = useState(false)
+  const [state, ] = useState(false);
 
   const theme = useTheme();
   const colors = theme.palette;
@@ -20,37 +20,37 @@ const [state , setState] = useState(false)
     <>
       <Header title="Dashboard" subtitle="Welcome to your dashboard" />
 
-{
+      {state ? (
+        <>
+          {" "}
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4}>
+              <Box sx={test}>Comming Soon</Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={test}>Comming Soon</Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={test}>Comming Soon</Box>
+            </Grid>
+            {/* <ProgressCircle size="180" progress="0.60"/> */}
+          </Grid>
+          <Grid container spacing={2} mt={0.5}>
+            <Grid item xs={12} md={8}>
+              <Box sx={test02}>Comming Soon</Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={test02}>Comming Soon</Box>
+            </Grid>
+          </Grid>{" "}
+        </>
+      ) : (
+        <>
+          <Spinner />
 
-state ? (<>       <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <Box sx={test}>Comming Soon</Box>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Box sx={test}>Comming Soon</Box>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Box sx={test}>Comming Soon</Box>
-        </Grid>
-        {/* <ProgressCircle size="180" progress="0.60"/> */}
-      </Grid>
-      <Grid container spacing={2} mt={0.5}>
-        <Grid item xs={12} md={8}>
-          <Box sx={test02}>Comming Soon</Box>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Box sx={test02}>Comming Soon</Box>
-        </Grid>
-      </Grid> </>) : ( <>
-<Spinner/>
-
-<Typography>Comming Soon</Typography>
-
-
- </>)
-
-}
-
+          <Typography>Comming Soon</Typography>
+        </>
+      )}
     </>
   );
 };
