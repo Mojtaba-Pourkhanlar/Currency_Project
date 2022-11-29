@@ -153,7 +153,6 @@ const Coins = () => {
         color="secondary"
         onChange={(_, value) => {
           setPage(value);
-          window.scroll(0, 450);
         }}
       />
     </>
