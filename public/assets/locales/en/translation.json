@@ -63,8 +63,15 @@
   "welcome": "Welcome",
   "manageTeam": "Manage Team",
   "chart": "Chart",
+  "cryptocurrencies": "More information on crypto currencies",
   "anoutMe": "About Me",
   "readMore": "Read More",
   "readLess": "Read Less",
-"notFound":"Not Found...!😒"
+  "notFound": "Not Found...!😒",
+  "yourCurrency": "Please select your currency",
+  "rank": "Rank",
+  "currentPrice": "Current Price",
+  "changePrice": "Price Change 24h",
+  "currentMarket": "Market Cap Change 24h",
+  "currentLow": "24 Hour Low"
 }

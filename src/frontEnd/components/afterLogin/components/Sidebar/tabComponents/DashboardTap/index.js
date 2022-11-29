@@ -15,10 +15,9 @@ import { Line } from "react-chartjs-2";
 import { DasboardData } from "../../../../../../context/Dahsboard";
 import { HistoricalChart } from "../../../../../../services/api";
 import { Header } from "../Header";
-import Chart from 'chart.js/auto';
-import {CategoryScale} from 'chart.js'; 
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
 Chart.register(CategoryScale);
-
 
 export const chartDays = [
   {
@@ -52,7 +51,7 @@ export const DashboardTap = () => {
 
   const fetchData = async () => {
     const { data } = await HistoricalChart(id, days);
-    setStop(true);
+    setLoading(true);
     setChart(data.prices);
   };
 
@@ -60,7 +59,7 @@ export const DashboardTap = () => {
     if (allData !== "") {
       fetchData();
     }
-  }, [allData]);
+  }, [allData, days]);
 
   const demo = {
     "& .MuiSelect-select": {
@@ -73,7 +72,6 @@ export const DashboardTap = () => {
       color: "#fff",
     },
   };
-
 
   return (
     <>
@@ -99,32 +97,50 @@ export const DashboardTap = () => {
         </Select>
       </FormControl>
 
-        <Line
-          data={{
-            labels: chart.map((coin) => {
-              let date = new Date(coin[0]);
-              let time =
-                date.getHours() > 12
-                  ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-                  : `${date.getHours()}:${date.getMinutes()} AM`;
-              return days === 1 ? time : date.toLocaleDateString();
-            }),
-            datasets: [
-              {
-                data: chart.map((coin) => coin[1]),
-                label: `Price ( Past ${days} Days ) in `,
-                borderColor: "#EEBC1D",
-              },
-            ],
-          }}
-          options={{
-            elements: {
-              point: {
-                radius: 1,
-              },
+      <Line
+        data={{
+          labels: chart.map((coin) => {
+            let date = new Date(coin[0]);
+            let time =
+              date.getHours() > 12
+                ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+                : `${date.getHours()}:${date.getMinutes()} AM`;
+            return days === 1 ? time : date.toLocaleDateString();
+          }),
+          datasets: [
+            {
+              data: chart.map((coin) => coin[1]),
+              label: `Price ( Past ${days} Days ) in `,
+              borderColor: "#EEBC1D",
             },
-          }}
-        />
+          ],
+        }}
+        options={{
+          elements: {
+            point: {
+              radius: 1,
+            },
+          },
+        }}
+      />
+      <div
+        style={{
+          display: "flex",
+          marginTop: 20,
+          justifyContent: "space-around",
+          width: "100%",
+        }}>
+        {chartDays.map((day) => (
+          <Button
+            key={day.value}
+            onClick={() => {
+              setDays(day.value);
+            }}
+            selected={day.value === days}>
+            {day.label}
+          </Button>
+        ))}
+      </div>
 
       {/* {coin.map((item) => (
         <div key={item.id}>
