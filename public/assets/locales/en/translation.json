@@ -73,5 +73,20 @@
   "currentPrice": "Current Price",
   "changePrice": "Price Change 24h",
   "currentMarket": "Market Cap Change 24h",
-  "currentLow": "24 Hour Low"
+  "currentLow": "24 Hour Low",
+  "MarketTab": "Market",
+
+  "market": "All Market",
+  "marketDec": "Cryptocurrency Prices by Market Cap",
+  "showFull": "Show Fully Diluted Valuation?",
+
+"coin":"Coin",
+"price":"Price",
+"24":"24h",
+"24v":"24h Volume",
+"mkt":"Market Cap",
+"7day":"Last 7 days",
+"30":"30 Days",
+"3":"3 Months",
+"1":"1 Year"
 }

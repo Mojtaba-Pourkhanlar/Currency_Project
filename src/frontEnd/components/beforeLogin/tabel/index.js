@@ -76,6 +76,7 @@ const Coins = () => {
           sx={CssTextField}
         />
       </Box>
+
       <TableContainer component={Paper}>
         <Table sx={{ m: "0" }} aria-label="customized table">
           <TableHead sx={headerTable}>

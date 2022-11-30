@@ -2,7 +2,13 @@ import { Grid, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { DasboardData } from "../../../../context/Dahsboard";
 import { Sidebar } from "./sidbarComponents";
-import { AboutTab, ChartTab, DashboardTap, ManageTab } from "./tabComponents";
+import {
+  AboutTab,
+  ChartTab,
+  DashboardTap,
+  ManageTab,
+  MarketTab,
+} from "./tabComponents";
 import { TabPanel } from "./TabPanel";
 
 export const SideBar = () => {
@@ -23,7 +29,6 @@ export const SideBar = () => {
           xl={2}
           sx={{
             backgroundColor: colors.primary,
-            width: "inherit",
           }}>
           <Sidebar />
         </Grid>
@@ -44,14 +49,18 @@ export const SideBar = () => {
           </TabPanel>
 
           <TabPanel value={pageNumber} index={1}>
-            <ManageTab />
+            <MarketTab />
           </TabPanel>
 
           <TabPanel value={pageNumber} index={2}>
-            <ChartTab />
+            <ManageTab />
           </TabPanel>
 
           <TabPanel value={pageNumber} index={3}>
+            <ChartTab />
+          </TabPanel>
+
+          <TabPanel value={pageNumber} index={4}>
             <AboutTab />
           </TabPanel>
         </Grid>

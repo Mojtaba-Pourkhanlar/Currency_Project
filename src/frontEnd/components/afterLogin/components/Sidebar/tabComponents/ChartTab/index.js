@@ -1,5 +1,4 @@
 import {
-  Box,
   Grid,
   Typography,
   useTheme,
@@ -8,13 +7,11 @@ import {
   Select,
   InputLabel,
   Button,
-  CircularProgress,
 } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { DasboardData } from "../../../../../../context/Dahsboard";
 import { HistoricalChart } from "../../../../../../services/api";
-import { Spinner } from "../../../../../../helpers";
 import { Header } from "../Header";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
@@ -22,31 +19,12 @@ import { useTranslation } from "react-i18next";
 import DetailCoin from "./DetailCoin";
 Chart.register(CategoryScale);
 
-export const chartDay = [
-  {
-    label: "24 Hours",
-    value: 1,
-  },
-  {
-    label: "30 Days",
-    value: 30,
-  },
-  {
-    label: "3 Months",
-    value: 90,
-  },
-  {
-    label: "1 Year",
-    value: 365,
-  },
-];
-
 export const ChartTab = () => {
   const { coins, setLoading } = useContext(DasboardData);
   const [allData, setAllData] = useState("");
   const [chart, setChart] = useState([]);
   const [days, setDays] = useState(1);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const theme = useTheme();
   const colors = theme.palette;
   const showSingelData = coins.filter((item) => item.name === allData);
@@ -66,6 +44,29 @@ export const ChartTab = () => {
       fetchData();
     }
   }, [allData, days]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const chartDay = [
+    {
+      label: t("24"),
+      value: 1,
+    },
+    {
+      label: t("30"),
+      value: 30,
+    },
+    {
+      label: t("3"),
+      value: 90,
+    },
+    {
+      label: t("1"),
+      value: 365,
+    },
+  ];
 
   const demo = {
     "& .MuiSelect-select": {
@@ -140,12 +141,14 @@ export const ChartTab = () => {
               datasets: [
                 {
                   data: chart.map((coin) => coin[1]),
-                  label: `Price ( Past ${days} Days ) in `,
                   borderColor: "#EEBC1D",
                 },
               ],
             }}
             options={{
+              plugins: {
+                legend: false,
+              },
               elements: {
                 point: {
                   radius: 1,
@@ -173,6 +176,7 @@ export const ChartTab = () => {
             ))}
           </div>
         </Grid>
+
       </Grid>
     </>
   );

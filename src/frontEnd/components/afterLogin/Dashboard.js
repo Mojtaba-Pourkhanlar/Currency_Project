@@ -4,31 +4,32 @@ import { DasboardData } from "../../context/Dahsboard";
 import { SpeedDialDrop } from "../../once";
 import { Header } from "./components/header";
 import { SideBar } from "./components/Sidebar/SideBar";
-import { getAllCoins } from "../../services/api";
+import { getAllCoins, getAllMarkets } from "../../services/api";
 
 const Dashboard = () => {
   const [coins, setCoins] = useState([]);
+  const [allMarekts, setAllMarkets] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pageNumber, setPageNumber] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const { data } = await getAllCoins();
+      const { data: markets } = await getAllMarkets();
+      setCoins(data);
+      setAllMarkets(markets);
+      setLoading(false);
+    } catch (error) {
+      console.log(error.message);
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const { data } = await getAllCoins();
-        setCoins(data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error.message);
-        setLoading(false);
-      }
-    };
     fetchData();
   }, []);
-
-
 
   const handlePageNumber = (event, newPage) => {
     setPageNumber(newPage);
@@ -45,6 +46,8 @@ const Dashboard = () => {
         setCoins,
         loading,
         setLoading,
+        allMarekts,
+        setAllMarkets,
       }}>
       <div>
         <Header />

@@ -73,13 +73,26 @@ const SidebarTabs = () => {
         label={
           <Box sx={design}>
             <PeopleOutlined sx={{ m: "0 10px" }} />
-            <Typography>{t("manageTeam")}</Typography>
+            <Typography>{t("MarketTab")}</Typography>
           </Box>
         }
         sx={demo}
         iconPosition="start"
         onClick={() => setDrawerOpen(false)}
         {...tabProps(1)}
+      />
+
+      <Tab
+        label={
+          <Box sx={design}>
+            <PeopleOutlined sx={{ m: "0 10px" }} />
+            <Typography>{t("manageTeam")}</Typography>
+          </Box>
+        }
+        sx={demo}
+        iconPosition="start"
+        onClick={() => setDrawerOpen(false)}
+        {...tabProps(2)}
       />
 
       <Tab
@@ -92,7 +105,7 @@ const SidebarTabs = () => {
         iconPosition="start"
         sx={demo}
         onClick={() => setDrawerOpen(false)}
-        {...tabProps(2)}
+        {...tabProps(3)}
       />
       <Tab
         label={
@@ -104,7 +117,7 @@ const SidebarTabs = () => {
         iconPosition="start"
         sx={demo}
         onClick={() => setDrawerOpen(false)}
-        {...tabProps(3)}
+        {...tabProps(4)}
       />
     </Tabs>
   );

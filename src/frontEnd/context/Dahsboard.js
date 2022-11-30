@@ -9,4 +9,6 @@ export const DasboardData = createContext({
   setCoins: () => {},
   loading: false,
   setLoading: () => {},
+  allMarekts: [],
+  setAllMarkets: () => {},
 });

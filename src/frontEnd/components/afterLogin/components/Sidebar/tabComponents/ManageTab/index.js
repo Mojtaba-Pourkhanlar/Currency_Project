@@ -1,5 +1,5 @@
 import { Box, useTheme } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "../Header";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockDataContacts } from "../../../../../../once/chartData/mockData";
@@ -9,6 +9,10 @@ export const ManageTab = () => {
   const theme = useTheme();
   const colors = theme.palette;
   const { t } = useTranslation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const columns = [
     { field: "id", headerName: `${t("id")}`, flex: 0.5 },

@@ -10,7 +10,6 @@ const DetailCoin = ({ coin }) => {
     image,
     price_change_24h,
     market_cap_change_24h,
-    last_updated,
     current_price,
     low_24h,
   } = coin;
@@ -61,7 +60,7 @@ const DetailCoin = ({ coin }) => {
               variant="h2"
               fontWeight={600}
               color={colors.grey.light}
-              my="25px">
+              my="50px">
               ${current_price.toLocaleString()}
             </Typography>
           </Box>

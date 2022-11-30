@@ -23,6 +23,7 @@ import linkedin from "../../../../../../assets/images/skill/linkedin.svg";
 import { Header } from "../Header";
 import { ReadMoreLess } from "../../../../../../helpers";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 const ItemGrid = ({ title, images }) => {
   return (
@@ -50,6 +51,10 @@ const ItemGrid = ({ title, images }) => {
 
 export const AboutTab = () => {
   const { i18n, t } = useTranslation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const leftRight = {
     textAlign: `${i18n.language === "en" ? "left" : "right"}`,

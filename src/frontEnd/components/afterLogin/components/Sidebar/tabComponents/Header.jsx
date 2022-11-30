@@ -16,7 +16,7 @@ export const Header = ({ title, subtitle }) => {
         {t(`${title}`)}
       </Typography>
       <Typography variant="h5" mt="10px" color={colors.grey.main}>
-{t(`${subtitle}`)}
+        {t(`${subtitle}`)}
       </Typography>
     </Box>
   );
