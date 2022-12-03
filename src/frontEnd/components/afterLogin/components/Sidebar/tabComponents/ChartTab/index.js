@@ -9,13 +9,13 @@ import {
   Button,
 } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
-import { Line } from "react-chartjs-2";
 import { DasboardData } from "../../../../../../context/Dahsboard";
 import { HistoricalChart } from "../../../../../../services/api";
 import { Header } from "../Header";
+import { useTranslation } from "react-i18next";
+import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
-import { useTranslation } from "react-i18next";
 import DetailCoin from "./DetailCoin";
 Chart.register(CategoryScale);
 

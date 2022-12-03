@@ -1,0 +1,14 @@
+export { default as Bootstrap } from "./bootstrap.svg";
+export { default as React } from "./react.svg";
+export { default as Js } from "./js.svg";
+export { default as Git } from "./git.svg";
+export { default as Github } from "./github.svg";
+export { default as Graphql } from "./graphql.svg";
+export { default as Html } from "./html.svg";
+export { default as Linkdin } from "./linkedin.svg";
+export { default as Mui } from "./mui.svg";
+export { default as Next } from "./next.svg";
+export { default as Redux } from "./redux.svg";
+export { default as Scss } from "./scss.svg";
+export { default as Telegram } from "./telegram.svg";
+export { default as Css } from "./css.svg";
