@@ -5,6 +5,7 @@ import Card from "./Card";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Box } from "@mui/material";
 
+
 const responsive = {
   0: {
     items: 2,
@@ -21,6 +22,7 @@ const Gallery = () => {
   const { coins } = useContext(CoinsList);
   const listCopy = coins;
   const editList = listCopy.slice(0, 5);
+
   return (
     <Box
       component="div"

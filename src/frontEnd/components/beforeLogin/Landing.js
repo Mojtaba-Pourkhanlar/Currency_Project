@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { CoinsList } from "../../context/Coins";
 import { getAllCoins } from "../../services/api";
 import { Layout } from "../layout";
@@ -8,6 +8,9 @@ import { Categories } from "./categories";
 import Coins from "./tabel";
 import FAQ from "./faq";
 import { BackTop, ScrollTop } from "../../once";
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
+import { links } from "../../helpers/constants/particles";
 
 const Landing = () => {
   const [loading, setLoading] = useState(false);
@@ -30,6 +33,14 @@ const Landing = () => {
     fetchData();
   }, []);
 
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
+  }, []);
+
   return (
     <CoinsList.Provider
       value={{
@@ -46,6 +57,12 @@ const Landing = () => {
         <div style={{ minHeight: "100vh" }}>
           <Banner />
           <Container maxWidth="lg">
+            <Particles
+              id="tsparticles"
+              init={particlesInit}
+              loaded={particlesLoaded}
+              options={links}
+            />
             <Categories />
             <Coins />
             <FAQ />

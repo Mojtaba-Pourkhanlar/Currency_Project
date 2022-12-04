@@ -31,7 +31,7 @@ const Layout02 = () => {
         <Grid item xs={12} sm={12} md={4}>
           {allMarekts.slice(30, 34).map((item) => (
             <>
-              <Box key={item.id} >
+              <Box key={item.id}>
                 <Box display="flex" justifyContent="space-between">
                   <Typography>{item.symbol.toUpperCase()}</Typography>
                   <Typography
@@ -51,7 +51,7 @@ const Layout02 = () => {
                   value={item.atl_change_percentage / 10}
                 />
               </Box>
-              <Divider sx={{m:"25px 0"}}/>
+              <Divider sx={{ m: "25px 0" }} />
             </>
           ))}
         </Grid>

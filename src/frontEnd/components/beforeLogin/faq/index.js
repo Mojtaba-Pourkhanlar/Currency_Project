@@ -34,7 +34,7 @@ const FaqComponent = ({ title, subTitle, images, width }) => {
 
 const FAQ = () => {
   return (
-    <Grid container my={10}>
+    <Grid container my={10} sx={{ position: "relative" }}>
       <Grid item xs={12} sm={12} md={4}>
         <FaqComponent
           images={support}

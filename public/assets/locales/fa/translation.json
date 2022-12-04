@@ -87,5 +87,16 @@
   "7day": "7 روز گذشته",
   "30": "30 روز",
   "3": "3 ماه",
-  "1": "1 سال"
+  "1": "1 سال",
+
+  "firstName": "نام",
+  "lastName": "نام خانوادگی",
+  "ageَA": "سن",
+  "emailA": "ایمیل",
+  "phoneA": "شماره موبایل",
+  "mojtabaA": "مجتبی",
+  "pourkhanlar": "پورخانلر",
+  "30A": "24",
+  "mojtabaEmeil": "mojtabapourkhanlar@gmail.com",
+  "0990": "09907477987"
 }

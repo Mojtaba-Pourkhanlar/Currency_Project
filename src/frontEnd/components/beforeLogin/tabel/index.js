@@ -50,6 +50,7 @@ const Coins = () => {
     backgroundColor:
       colors.mode === "dark" ? colors.primary[500] : colors.grey[400],
     cursor: "pointer",
+
     "&:hover": {
       backgroundColor:
         colors.mode === "dark" ? colors.primary.main : colors.primary.light,
@@ -62,7 +63,7 @@ const Coins = () => {
   };
 
   return (
-    <>
+    <div style={{position: "relative"}}>
       <Typography variant="h2" m="80px 0 5px">
         {t("currenyList")}
       </Typography>
@@ -156,7 +157,7 @@ const Coins = () => {
           setPage(value);
         }}
       />
-    </>
+    </div>
   );
 };
 

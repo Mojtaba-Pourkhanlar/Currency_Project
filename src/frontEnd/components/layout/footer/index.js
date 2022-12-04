@@ -17,7 +17,12 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div style={{ backgroundColor: "#080A16", paddingTop: "50px" }}>
+    <div
+      style={{
+        backgroundColor: "#080A16",
+        paddingTop: "50px",
+        position: "relative",
+      }}>
       <Container maxWidth="xl">
         <Grid
           container
