@@ -19,7 +19,7 @@ const TopChartMarket = () => {
   };
   return (
     <Grid container>
-      {allMarekts.slice(22, 25).map((item) => (
+      {allMarekts.slice(0, 3).map((item) => (
         <Grid item key={item.id} xs={12} sm={12} md={6} lg={4} sx={container}>
           <Box sx={textPosi}>
             <Box sx={{ display: "flex", alignItems: "center" }}>

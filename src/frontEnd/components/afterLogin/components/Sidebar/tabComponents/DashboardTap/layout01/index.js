@@ -6,15 +6,17 @@ import { ProgressCircle } from "../../../../../../../helpers/ProgressCircle";
 const Layout01 = () => {
   const { coins } = useContext(DasboardData);
 
-  const first = coins.slice(22, 23).map((item) => item);
+  const first = coins.slice(20, 21).map((item) => item);
   const second = coins.slice(23, 24).map((item) => item);
   const thrid = coins.slice(24, 25).map((item) => item);
 
   const posi = {
     position: "absolute",
     top: "40px",
-    mx: "30px",
+    left: "43%",
   };
+
+  console.log(second);
 
   const theme = useTheme();
   const colors = theme.palette;
@@ -25,7 +27,7 @@ const Layout01 = () => {
   return (
     <>
       <Grid container my="30px" spacing={2}>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4}>
           {first.map((item) => (
             <Box
               key={item.id}
@@ -58,13 +60,13 @@ const Layout01 = () => {
               <Box sx={{ position: "relative" }}>
                 <ProgressCircle progress={item.current_price / 10} />
                 <Typography sx={posi}>
-                  {item.current_price.toLocaleString()}
+                  {Math.round(item.current_price.toLocaleString())}
                 </Typography>
               </Box>
             </Box>
           ))}
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4}>
           {second.map((item) => (
             <Box
               key={item.id}
@@ -97,13 +99,13 @@ const Layout01 = () => {
               <Box sx={{ position: "relative" }}>
                 <ProgressCircle progress={item.current_price / 10} />
                 <Typography sx={posi}>
-                  {item.current_price.toLocaleString()}
+                  {Math.round(item.current_price.toLocaleString())}
                 </Typography>
               </Box>
             </Box>
           ))}
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4}>
           {thrid.map((item) => (
             <Box
               key={item.id}
@@ -135,7 +137,7 @@ const Layout01 = () => {
               <Box sx={{ position: "relative" }}>
                 <ProgressCircle progress={item.current_price / 10} />
                 <Typography sx={posi}>
-                  {item.current_price.toLocaleString()}
+                  {Math.round(item.current_price.toLocaleString())}
                 </Typography>
               </Box>
             </Box>

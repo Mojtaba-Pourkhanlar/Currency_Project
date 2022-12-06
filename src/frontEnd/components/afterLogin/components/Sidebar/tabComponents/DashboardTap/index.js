@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Header } from "../Header";
 import Layout02 from "./layout02";
 import Layout01 from "./layout01";
+import Layout03 from "./layout03";
 
 export const DashboardTap = () => {
   useEffect(() => {
@@ -12,15 +13,9 @@ export const DashboardTap = () => {
     <>
       <Header title="dashboard" subtitle="dashboardDec" />
 
-      <>
-        <>
-          <Layout01 />
-        </>
-
-        <>
-          <Layout02 />
-        </>
-      </>
+      <Layout01 />
+      <Layout02 />
+      <Layout03 />
     </>
   );
 };

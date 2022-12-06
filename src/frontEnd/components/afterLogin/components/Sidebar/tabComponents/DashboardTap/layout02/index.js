@@ -24,11 +24,11 @@ const Layout02 = () => {
 
   return (
     <>
-      <Grid container spacing={2} my="30px">
-        <Grid item xs={12} sm={12} md={8}>
+      <Grid container spacing={2} mt="30px">
+        <Grid item xs={12} sm={12} lg={8}>
           <Chartjs />
         </Grid>
-        <Grid item xs={12} sm={12} md={4}>
+        <Grid item xs={12} sm={12} lg={4}>
           {allMarekts.slice(30, 34).map((item) => (
             <>
               <Box key={item.id}>

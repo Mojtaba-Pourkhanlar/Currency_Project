@@ -13,6 +13,11 @@ import TableCoinId from "./TableCoinId";
 import { CoinsList } from "../../../../context/Coins";
 import { getCoinID } from "../../../../services/api";
 import { useTranslation } from "react-i18next";
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { Spinner } from "../../../../helpers";
+Chart.register(CategoryScale);
 
 const CoinID = () => {
   const { setLoading, loading } = useContext(CoinsList);
@@ -39,6 +44,8 @@ const CoinID = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const ada = coinId.tickers;
+
   const design = {
     display: "flex",
     alignItems: "center",
@@ -53,14 +60,14 @@ const CoinID = () => {
             justifyContent: "center",
             marginTop: "200px",
           }}>
-          <h1>Loading....</h1>
+          <Spinner/>
         </Box>
       ) : (
         <div style={{ minHeight: "100vh" }}>
           <Container maxWidth="lg">
             <Grid container pt={10}>
               <Grid item xs={12}>
-                <Typography variant="h1" mb={10} color={colors.grey.dark}>
+                <Typography variant="h1" mb={10} color={colors.grey.light}>
                   {coinId.name}
                 </Typography>
               </Grid>
@@ -151,14 +158,41 @@ const CoinID = () => {
                   </>
                 </Box>
               </Grid>
+
+              <Grid item xs={12} my={5}>
+                {ada !== undefined ? (
+                  <Bar
+                    data={{
+                      labels: ada.slice(0, 11).map((item) => item.market.name),
+                      datasets: [
+                        {
+                          data: ada.slice(0, 11).map((item) => item.volume),
+                          backgroundColor: "rgba(255, 99, 132, 0.5)",
+                        },
+                      ],
+                    }}
+                    options={{
+                      plugins: {
+                        legend: false,
+                      },
+                      elements: {
+                        point: {
+                          radius: 1,
+                        },
+                      },
+                    }}
+                  />
+                ) : null}
+              </Grid>
+
+              <Grid item mb={5}>
+                <Link to={"/landing"} style={{ textDecoration: "none" }}>
+                  <Button variant="contained" color="warning">
+                    {t("back")}
+                  </Button>
+                </Link>
+              </Grid>
             </Grid>
-            <>
-              <Link to={"/landing"} style={{ textDecoration: "none" }}>
-                <Button variant="contained" color="warning">
-                  {t("back")}
-                </Button>
-              </Link>
-            </>
           </Container>
         </div>
       )}
