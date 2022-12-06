@@ -101,6 +101,7 @@
   "mojtabaEmeil": "mojtabapourkhanlar@gmail.com",
   "0990": "09907477987",
 
-  "vpnMessage": "If there is no information, Please turn on your VPN and reload",
+  "vpnMessage": "If there is no information ...!?",
+  "vpnMessage02": "Please turn on your VPN and reload.",
   "ok": "Ok"
 }

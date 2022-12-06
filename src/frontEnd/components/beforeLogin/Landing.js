@@ -69,8 +69,11 @@ const Landing = () => {
         <div style={{ minHeight: "100vh" }}>
           {onec === null && (
             <ModalTrue>
-              <Typography variant="h5" mb="30px">
+              <Typography variant="h5" mb="10px">
                 {t("vpnMessage")}
+              </Typography>
+              <Typography variant="h5" mb="30px">
+                {t("vpnMessage02")}
               </Typography>
             </ModalTrue>
           )}
