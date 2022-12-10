@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import bgImage from "../../../assets/images/btc/05.jpg";
-import bgImageDark from "../../../assets/images/btc/06.jpg";
+import bgImage from "frontEnd/assets/images/btc/05.jpg";
+import bgImageDark from "frontEnd/assets/images/btc/06.jpg";
 import SlideHeader from "./Slider/Slider";
 import { Box, Container, Typography, Grid, useTheme } from "@mui/material";
 

@@ -1,6 +1,6 @@
-import faq from "../../../assets/images/icons/faq.svg";
-import blog from "../../../assets/images/icons/blog.svg";
-import support from "../../../assets/images/icons/support.svg";
+import faq from "frontEnd/assets/images/icons/faq.svg";
+import blog from "frontEnd/assets/images/icons/blog.svg";
+import support from "frontEnd/assets/images/icons/support.svg";
 import { Box, Grid, Typography, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 

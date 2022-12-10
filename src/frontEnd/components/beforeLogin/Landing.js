@@ -1,17 +1,17 @@
 import { Container, Typography } from "@mui/material";
 import { useEffect, useState, useCallback } from "react";
-import { CoinsList } from "../../context/Coins";
-import { getAllCoins } from "../../services/api";
+import { CoinsList } from "frontEnd/context/Coins";
+import { getAllCoins } from "frontEnd/services/api";
 import { Layout } from "../layout";
 import Banner from "./baner/Banner";
 import { Categories } from "./categories";
 import Coins from "./tabel";
 import FAQ from "./faq";
-import { BackTop, ScrollTop } from "../../once";
+import { BackTop, ScrollTop } from "frontEnd/once";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import { links } from "../../helpers/constants/particles";
-import { ModalTrue } from "../../helpers";
+import { links } from "frontEnd/helpers/constants/particles";
+import { ModalTrue } from "frontEnd/helpers";
 import { useTranslation } from "react-i18next";
 
 const Landing = () => {

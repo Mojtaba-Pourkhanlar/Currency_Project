@@ -37,6 +37,7 @@ export const BackTop = () => {
             background: theme.palette.mode === "dark" ? "#f3d02c" : "#084430",
             color: theme.palette.mode === "dark" ? "#191a1b" : "#fff",
             transition: "all 0.50s linear",
+            zIndex: 100,
           }}
         />
       )}

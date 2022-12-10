@@ -10,13 +10,13 @@ import {
 } from "@mui/material";
 // Component
 import TableCoinId from "./TableCoinId";
-import { CoinsList } from "../../../../context/Coins";
-import { getCoinID } from "../../../../services/api";
+import { CoinsList } from "frontEnd/context/Coins";
+import { getCoinID } from "frontEnd/services/api";
 import { useTranslation } from "react-i18next";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { Spinner } from "../../../../helpers";
+import { Spinner } from "frontEnd/helpers";
 Chart.register(CategoryScale);
 
 const CoinID = () => {

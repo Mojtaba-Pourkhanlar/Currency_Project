@@ -7,10 +7,10 @@ import {
   Typography,
 } from "@mui/material";
 // Image
-import img1 from "../../../assets/images/btc/08.jpg";
-import img2 from "../../../assets/images/btc/02.jpg";
-import img3 from "../../../assets/images/btc/03.jpg";
-import img4 from "../../../assets/images/btc/04.jpg";
+import img1 from "frontEnd/assets/images/btc/08.jpg";
+import img2 from "frontEnd/assets/images/btc/02.jpg";
+import img3 from "frontEnd/assets/images/btc/03.jpg";
+import img4 from "frontEnd/assets/images/btc/04.jpg";
 import { useTranslation } from "react-i18next";
 
 export const Categories = () => {
@@ -90,7 +90,7 @@ export const Categories = () => {
 
   return (
     <>
-      <Typography variant="h2">{t('categories')}</Typography>
+      <Typography variant="h2">{t("categories")}</Typography>
       <Grid container spacing={1} sx={{ boxShadow: "none", my: "40px" }}>
         <Grid item xs={12} sm={12} md={4} sx={gridContainer}>
           <Card sx={cards}>

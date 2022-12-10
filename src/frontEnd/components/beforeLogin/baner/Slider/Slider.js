@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AliceCarousel from "react-alice-carousel";
-import { CoinsList } from "../../../../context/Coins";
+import { CoinsList } from "frontEnd/context/Coins";
 import Card from "./Card";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Box } from "@mui/material";

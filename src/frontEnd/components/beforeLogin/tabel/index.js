@@ -15,7 +15,7 @@ import {
   useTheme,
   TableCell,
 } from "@mui/material";
-import { CoinsList } from "../../../context/Coins";
+import { CoinsList } from "frontEnd/context/Coins";
 
 const Coins = () => {
   const { coins, search, setSearch, page, setPage } = useContext(CoinsList);
