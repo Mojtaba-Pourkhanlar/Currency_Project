@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
-import FormContainer from "../../components/authentication/Register/leftComponent";
-import ImageContainer from "../../components/authentication/Register/rightComponent";
+import FormContainer from "../../components/authentication/Register/Left";
+import ImageContainer from "../../components/authentication/Register/Right";
 
 export const Register = () => {
   return (

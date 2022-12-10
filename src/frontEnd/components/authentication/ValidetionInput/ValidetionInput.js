@@ -1,5 +1,5 @@
 // REUSABLE
-import { notify } from "../../../helpers";
+import { Toastify } from "frontEnd/helpers";
 
 export const validate = (data, type) => {
   const errors = {};
@@ -21,7 +21,7 @@ export const validate = (data, type) => {
   }
 
   if (data.status === 200) {
-    notify("success data!");
+    Toastify("success data!");
   }
 
   if (type === "SignUp") {

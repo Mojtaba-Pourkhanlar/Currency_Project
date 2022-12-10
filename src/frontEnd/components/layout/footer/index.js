@@ -1,9 +1,9 @@
 import { Box, Container, Divider, Grid, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import appStore from "../../../assets/images/appStore.svg";
-import google from "../../../assets/images/google.svg";
-import footer from "../../../assets/images/footerCards.png";
-import { Logo } from "../../../assets/Logo";
+import appStore from "frontEnd/assets/images/appStore.svg";
+import google from "frontEnd/assets/images/google.svg";
+import footer from "frontEnd/assets/images/footerCards.png";
+import { Logo } from "frontEnd/assets/Logo";
 // Icon
 import {
   FacebookOutlined,
@@ -11,7 +11,7 @@ import {
   Pinterest,
   Instagram,
 } from "@mui/icons-material";
-import { Accordions } from "../../../helpers";
+import { Accordions } from "frontEnd/helpers";
 
 const Footer = () => {
   const { t } = useTranslation();

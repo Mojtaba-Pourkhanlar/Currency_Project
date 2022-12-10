@@ -10,7 +10,7 @@ import FAQ from "./faq";
 import { BackTop, ScrollTop } from "frontEnd/once";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import { links } from "frontEnd/helpers/constants/particles";
+import { links } from "frontEnd/helpers/particles";
 import { ModalTrue } from "frontEnd/helpers";
 import { useTranslation } from "react-i18next";
 

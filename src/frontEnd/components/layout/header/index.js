@@ -9,14 +9,17 @@ import {
   IconButton,
   Drawer,
   Grid,
+  Button,
+  Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
 import Left from "./left";
-import { Right } from "./right";
 import { SideBar } from "./sidebar";
+import { Link } from "react-router-dom";
+import { Language, Theme } from "frontEnd/once";
 
-export const Header = () => {
+export const Header = ({ login = null }) => {
   const [isOpen, setIsOpen] = useState({
     left: false,
     right: false,
@@ -29,7 +32,7 @@ export const Header = () => {
     setIsOpen({ ...isOpen, [anchor]: open });
   };
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const Hamburger = styled("div")(({ theme }) => ({
     [theme.breakpoints.up("md")]: {
@@ -70,6 +73,7 @@ export const Header = () => {
                   </React.Fragment>
                 ))}
               </Grid>
+
               <Grid
                 item
                 xs={11}
@@ -84,8 +88,33 @@ export const Header = () => {
                   <Left />
                 </Box>
 
-                <Box>
-                  <Right />
+                <Box display="flex" alignItems="center">
+                  <Box component="div">
+                    <Theme />
+                  </Box>
+                  <Box component="div" sx={{ mx: { xs: "5px", sm: "30px" } }}>
+                    <Language />
+                  </Box>
+
+                  {login ? (
+                    <Box>
+                      <Link to="/login" style={{ textDecoration: "none" }}>
+                        <Button
+                          variant="contained"
+                          color="warning"
+                          sx={{
+                            display: {
+                              xs: "none",
+                              sm: "flex",
+                            },
+                          }}>
+                          <Typography variant="h6" color="#fff">
+                            {t("Login")}
+                          </Typography>
+                        </Button>
+                      </Link>
+                    </Box>
+                  ) : null}
                 </Box>
               </Grid>
             </Grid>

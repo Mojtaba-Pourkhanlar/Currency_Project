@@ -11,6 +11,7 @@ const container = {
 };
 export const SideBar = ({ anchor, toggleDrawer }) => {
   const { t } = useTranslation();
+  const isLogin = localStorage.getItem("token");
 
   return (
     <Box
@@ -18,34 +19,30 @@ export const SideBar = ({ anchor, toggleDrawer }) => {
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}>
-
-      <Box sx={{ cursor: "pointer" , mb:'50px'}}>
-        <Link
-          to="/landing"
-          style={{
-            color: "#fff",
-            textDecoration: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-          <Logo />
-          {t("around")}
-        </Link>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+          mb: "50px",
+        }}>
+        <Logo />
+        {t("around")}
       </Box>
 
-      <Divider variant="middle" color="#ccc" sx={{ margin: "20px 0" }} />
-      <Box m="20px 10px">
-        <Link to="/login" style={{ textDecoration: "none" }}>
-          <Button variant="contained" color="warning">
-            <Typography variant="h6" color="#fff">
-              {t("Login")}
-            </Typography>
-          </Button>
-        </Link>
-      </Box>
-
-      <Divider variant="middle" color="#ccc" sx={{ margin: "10px 0" }} />
+      {isLogin ? null : (
+        <Box m="20px 10px">
+          <Divider variant="middle" color="#ccc" sx={{ margin: "20px 0" }} />
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <Button variant="contained" color="warning">
+              <Typography variant="h6" color="#fff">
+                {t("Login")}
+              </Typography>
+            </Button>
+          </Link>
+          <Divider variant="middle" color="#ccc" sx={{ margin: "10px 0" }} />
+        </Box>
+      )}
     </Box>
   );
 };

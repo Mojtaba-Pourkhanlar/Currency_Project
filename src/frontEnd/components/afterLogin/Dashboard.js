@@ -2,9 +2,9 @@ import { Container } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { DasboardData } from "../../context/Dahsboard";
 import { SpeedDialDrop } from "../../once";
-import { Header } from "./components/header";
-import { SideBar } from "./components/Sidebar/SideBar";
+import { SideBar } from "./Sidebar/SideBar";
 import { getAllCoins, getAllMarkets } from "../../services/api";
+import { Header } from "../layout/header";
 
 const Dashboard = () => {
   const [coins, setCoins] = useState([]);
