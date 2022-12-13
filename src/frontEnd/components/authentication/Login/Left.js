@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Box, Grid, Typography, TextField, Button } from "@mui/material";
-import axios from "axios";
 // Icon
 import {
   VisibilityOutlined,
@@ -12,6 +11,7 @@ import {
 // Form Validate
 import { validate } from "../ValidetionInput/ValidetionInput";
 import { Toastify, useTitle } from "frontEnd/helpers";
+import { LoginUse } from "frontEnd/services/user";
 
 const FormContainer = () => {
   const [passwordType, setPasswordType] = useState(false);
@@ -43,23 +43,15 @@ const FormContainer = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await axios
-      .post("https://apingweb.com/api/login", data)
-      .then((res) => {
-        if (res.status === 200) {
-          Toastify("login Successfully 😉", "success");
-          window.location = "/dashboard";
-          const users = res.data.result.name;
-          const token = res.data.token;
-          const result = res.data.result;
-          localStorage.setItem("user", JSON.stringify(users));
-          localStorage.setItem("token", JSON.stringify(token));
-          localStorage.setItem("result", JSON.stringify(result));
-        }
-      })
-      .catch((err) => {
-        Toastify(`${err.response.data.message} 😒`, "error");
-      });
+    try {
+      const status = await LoginUse(data);
+      if (status === 200) {
+        Toastify("login Successfully 😉", "success");
+        window.location = "/dashboard";
+      }
+    } catch (err) {
+      console.log(err);
+    }
     setTouched({
       email: true,
       password: true,
@@ -181,6 +173,48 @@ const FormContainer = () => {
           LOGIN
         </Typography>
 
+        {/* 
+        <Formik
+          initialValues={{ email: "", password: "" }}
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          validationSchema={yupValidation}>
+          {({ errors, touched, isSubmitting, handleSubmit }) => (
+            <Form>
+              <Field
+                sx={CssTextField}
+                color="secondary"
+                as={TextField}
+                name="email"
+                label="Email"
+                variant="outlined"
+                error={Boolean(errors.email) && Boolean(touched.email)}
+                helperText={Boolean(touched.email) && errors.email}
+              />
+              <Field
+                sx={CssTextField}
+                as={TextField}
+                variant="outlined"
+                label="Password"
+                name="password"
+                type="password"
+                error={Boolean(errors.password) && Boolean(touched.password)}
+                helperText={Boolean(touched.password) && errors.password}
+              />
+              <Button
+                variant="contained"
+                type="submit"
+                // onClick={handleSubmit}
+                // disabled={isSubmitting}
+                sx={button}>
+                {isSubmitting ? "Loading" : "Login"}
+              </Button>
+            </Form>
+          )}
+        </Formik>
+ */}
+
         <form onSubmit={submitHandler} style={{ width: "inherit" }}>
           <Grid item xs={12}>
             <TextField
@@ -252,3 +286,74 @@ const FormContainer = () => {
 };
 
 export default FormContainer;
+
+/* 
+
+        <form onSubmit={submitHandler} style={{ width: "inherit" }}>
+          <Grid item xs={12}>
+            <TextField
+              sx={CssTextField}
+              // autoFocus
+              color="secondary"
+              label="Email"
+              variant="outlined"
+              name="email"
+              value={data.email}
+              onChange={changeHandler}
+              onFocus={focusHandler}
+            />
+            {errors.email && touched.email && (
+              <Typography variant="span" style={errorText}>
+                {errors.email}
+              </Typography>
+            )}
+          </Grid>
+
+          <Grid item xs={12}>
+            <Box component="div" sx={password}>
+              <TextField
+                sx={CssTextField}
+                variant="outlined"
+                label="Password"
+                name="password"
+                type={passwordType ? "text" : "password"}
+                value={data.password}
+                onChange={changeHandler}
+                onFocus={focusHandler}
+              />
+              <Box component="span" sx={passToggle} onClick={togglePassword}>
+                {passwordType ? (
+                  <VisibilityOutlined color="success" />
+                ) : (
+                  <VisibilityOffOutlined color="error" />
+                )}
+              </Box>
+            </Box>
+            {errors.password && touched.password && (
+              <Typography variant="span" style={errorText}>
+                {errors.password}
+              </Typography>
+            )}
+          </Grid>
+
+          <Grid item xs={12}>
+            <Button variant="contained" type="submit" sx={button}>
+              Login
+            </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <Box sx={{ textAlign: "center", mt: "50px" }}>
+              <Typography variant="h6" color="GrayText">
+                Don't have an account yet?
+              </Typography>
+              <Link to="/register" style={{ textDecoration: "none" }}>
+                <Typography color="secondary" fontWeight={700}>
+                  <u>Create an account</u>
+                </Typography>
+              </Link>
+            </Box>
+          </Grid>
+        </form>
+
+
+ */

@@ -60,7 +60,7 @@ const CoinID = () => {
             justifyContent: "center",
             marginTop: "200px",
           }}>
-          <Spinner/>
+          <Spinner />
         </Box>
       ) : (
         <div style={{ minHeight: "100vh" }}>

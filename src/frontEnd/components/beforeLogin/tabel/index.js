@@ -36,13 +36,13 @@ const Coins = () => {
     margin: "30px 0 20px",
     width: "100%",
     "& label": {
-      color: colors.grey.dark,
+      color: colors.grey.light,
     },
     "& label.Mui-focused": {
-      color: colors.grey.dark,
+      color: colors.grey.light,
     },
     "& input": {
-      color: colors.grey.dark,
+      color: colors.grey.light,
     },
   };
 

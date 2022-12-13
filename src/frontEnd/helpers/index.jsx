@@ -5,3 +5,4 @@ export * from "./ProgressCircle";
 export * from "./Spinner";
 export * from "./ReadMoreLess";
 export * from "./Modal";
+export * from "./ErrorMessage";
