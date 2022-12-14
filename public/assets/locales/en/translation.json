@@ -115,8 +115,11 @@
   "CPassword": "Confirm the Password",
   "CPassword02": "Password do not match",
 
+  "Dont": " Don't have an account yet?",
+  "Do": " Do have an account?",
+  "create": "Create an account",
+  "bLand": "Return Landing",
 
-"Dont":" Don't have an account yet?",
-"create":"Create an account",
-"bLand":"Return Landing"
+"sin":"Signup",
+"sub":"Submit"
 }

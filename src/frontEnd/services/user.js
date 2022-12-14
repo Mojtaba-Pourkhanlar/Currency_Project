@@ -17,3 +17,12 @@ export const LoginUse = async (user) => {
     Toastify(`${error.response.data.message} 😒`, "error");
   }
 };
+
+export const RegisterUser = async (user) => {
+  try {
+    const { status } = await axios.post(`${url}/register`, user);
+    return status;
+  } catch (error) {
+    Toastify(`${error.response.data.errors[0]} 😒`, "error");
+  }
+};
