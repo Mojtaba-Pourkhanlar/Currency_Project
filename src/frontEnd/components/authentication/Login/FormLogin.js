@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 export const FormLogin = () => {
   const [passwordType, setPasswordType] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const togglePassword = () => {
     setPasswordType(!passwordType);
   };
@@ -27,14 +27,8 @@ export const FormLogin = () => {
   };
 
   const validationSchema = yup.object({
-    email: yup
-      .string("Enter your email")
-      .email("Enter a valid email")
-      .required("Email is required"),
-    password: yup
-      .string("Enter your password")
-      .min(6, "Password should be of minimum 6 characters length")
-      .required("Password is required"),
+    email: yup.string().email(t("emailF")).required(t("emailF02")),
+    password: yup.string().min(6, t("password02")).required(t("password")),
   });
 
   const formik = useFormik({
@@ -92,13 +86,15 @@ export const FormLogin = () => {
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
-          <Box component="span" sx={passToggle} onClick={togglePassword}>
-            {passwordType ? (
-              <VisibilityOutlined color="success" />
-            ) : (
-              <VisibilityOffOutlined color="error" />
-            )}
-          </Box>
+          {i18n.language === "en" && (
+            <Box component="span" sx={passToggle} onClick={togglePassword}>
+              {passwordType ? (
+                <VisibilityOutlined color="success" />
+              ) : (
+                <VisibilityOffOutlined color="error" />
+              )}
+            </Box>
+          )}
         </Box>
         <Button
           color="success"

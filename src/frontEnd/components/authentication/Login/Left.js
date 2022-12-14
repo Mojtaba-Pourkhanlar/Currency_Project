@@ -1,12 +1,14 @@
 import { Box, Grid, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 // Icon
-import { ArrowBack } from "@mui/icons-material";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { useTitle } from "frontEnd/helpers";
 import { FormLogin } from "./FormLogin";
+import { useTranslation } from "react-i18next";
 
 const FormContainer = () => {
   useTitle("Login");
+  const { t, i18n } = useTranslation();
 
   return (
     <div
@@ -24,8 +26,14 @@ const FormContainer = () => {
               borderRadius: "50px",
               m: "10px",
             }}
-            startIcon={<ArrowBack />}>
-            Return Landing
+            startIcon={
+              i18n.language === "en" ? (
+                <ArrowBack />
+              ) : (
+                <ArrowForward sx={{ ml: "10px" }} />
+              )
+            }>
+            {t("bLand")}
           </Button>
         </Link>
       </Box>
@@ -52,19 +60,17 @@ const FormContainer = () => {
             fontWeight: 600,
             textAlign: "center",
           }}>
-          LOGIN
+          {t("Login")}
         </Typography>
-
         <FormLogin />
-
         <Grid item xs={12}>
           <Box sx={{ textAlign: "center", mt: "50px" }}>
             <Typography variant="h6" color="GrayText">
-              Don't have an account yet?
+              {t("Dont")}
             </Typography>
             <Link to="/register" style={{ textDecoration: "none" }}>
               <Typography color="secondary" fontWeight={700}>
-                <u>Create an account</u>
+                <u>{t("create")}</u>
               </Typography>
             </Link>
           </Box>
