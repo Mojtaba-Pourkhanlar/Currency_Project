@@ -63,7 +63,7 @@ const Coins = () => {
   };
 
   return (
-    <div style={{position: "relative"}}>
+    <div style={{ position: "relative" }}>
       <Typography variant="h2" m="80px 0 5px">
         {t("currenyList")}
       </Typography>
