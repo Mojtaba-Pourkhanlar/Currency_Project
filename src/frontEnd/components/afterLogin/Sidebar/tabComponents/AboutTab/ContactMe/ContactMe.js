@@ -9,7 +9,10 @@ const ContactMe = () => {
     <>
       <Grid container>
         <Grid item xs={12} sm={6}>
-          <a href="https://github.com/Mojtaba-Pourkhanlar">
+          <a
+            href="https://github.com/Mojtaba-Pourkhanlar"
+            target="_blank"
+            rel="noopener noreferrer">
             <img width="80px" src={Github} alt="github.com" />
           </a>
           <Typography variant="h5" my={1}>
@@ -17,7 +20,10 @@ const ContactMe = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <a href="https://www.linkedin.com/in/mojtaba-pourkhanlar-778370251">
+          <a
+            href="https://www.linkedin.com/in/mojtaba-pourkhanlar-778370251"
+            target="_blank"
+            rel="noopener noreferrer">
             <img width="80px" src={Linkdin} alt="www.linkedin.com" />
           </a>
           <Typography variant="h5" my={1}>
