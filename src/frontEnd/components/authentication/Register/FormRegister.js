@@ -7,6 +7,7 @@ import { RegisterUser } from "frontEnd/services/user";
 import { CustomeTextField, Toastify } from "frontEnd/helpers";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { type } from "@testing-library/user-event/dist/type";
 
 export const FormRegister = () => {
   const [passwordType, setPasswordType] = useState(false);
@@ -79,7 +80,7 @@ export const FormRegister = () => {
       <form onSubmit={formik.handleSubmit}>
         <CustomeTextField
           name="name"
-          label="Fullname"
+          label={t("fullna")}
           type="text"
           value={formik.values.name}
           onChange={formik.handleChange}
@@ -88,7 +89,7 @@ export const FormRegister = () => {
         />
         <CustomeTextField
           name="email"
-          label="Email"
+          label={t("email")}
           value={formik.values.email}
           onChange={formik.handleChange}
           error={formik.touched.email && Boolean(formik.errors.email)}
@@ -96,7 +97,7 @@ export const FormRegister = () => {
         />
         <CustomeTextField
           name="phone"
-          label="Phone"
+          label={t("phon")}
           type="number"
           value={formik.values.phone}
           onChange={formik.handleChange}
@@ -107,27 +108,26 @@ export const FormRegister = () => {
         <Box sx={password}>
           <CustomeTextField
             name="password"
-            label="Password"
+            label={t("pass")}
             type={passwordType ? "text" : "password"}
             value={formik.values.password}
             onChange={formik.handleChange}
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
-          {i18n.language === "en" && (
-            <Box component="span" sx={passToggle} onClick={togglePassword}>
-              {passwordType ? (
-                <VisibilityOutlined color="success" />
-              ) : (
-                <VisibilityOffOutlined color="error" />
-              )}
-            </Box>
-          )}
+
+          <Box component="span" sx={passToggle} onClick={togglePassword}>
+            {passwordType ? (
+              <VisibilityOutlined color="success" />
+            ) : (
+              <VisibilityOffOutlined color="error" />
+            )}
+          </Box>
         </Box>
         <Box sx={password}>
           <CustomeTextField
             name="password_confirmation"
-            label="Password Confirmation"
+            label={t("passRep")}
             type={passwordType ? "text" : "password"}
             value={formik.values.password_confirmation}
             onChange={formik.handleChange}
@@ -140,15 +140,14 @@ export const FormRegister = () => {
               formik.errors.password_confirmation
             }
           />
-          {i18n.language === "en" && (
-            <Box component="span" sx={passToggle} onClick={togglePassword}>
-              {passwordType ? (
-                <VisibilityOutlined color="success" />
-              ) : (
-                <VisibilityOffOutlined color="error" />
-              )}
-            </Box>
-          )}
+
+          <Box component="span" sx={passToggle} onClick={togglePassword}>
+            {passwordType ? (
+              <VisibilityOutlined color="success" />
+            ) : (
+              <VisibilityOffOutlined color="error" />
+            )}
+          </Box>
         </Box>
         <Button
           color="success"
@@ -156,7 +155,7 @@ export const FormRegister = () => {
           fullWidth
           sx={{ mt: "20px", height: "50px" }}
           type="submit">
-          {t('sub')}
+          {t("sin")}
         </Button>
       </form>
     </div>

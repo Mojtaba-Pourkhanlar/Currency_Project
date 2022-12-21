@@ -120,6 +120,13 @@
   "create": "Create an account",
   "bLand": "Return Landing",
 
-"sin":"Signup",
-"sub":"Submit"
+  "fullna": "Fullname",
+  "phon": "Phone",
+  "pass": "Password",
+  "passRep": "Password Confirm",
+
+  "sin": "Signup",
+  "sub": "Submit",
+
+"serachCrypto": "Search For a Crypto Currency"
 }

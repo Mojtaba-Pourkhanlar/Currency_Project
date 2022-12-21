@@ -29,7 +29,7 @@ export const DevInfoFA = ({ children }) => {
     <Typography
       variant="h5"
       color={colors.grey.main}
-      textAlign="right"
+      textAlign="left"
       sx={{ mt: 2 }}>
       <ArrowLeft
         sx={{

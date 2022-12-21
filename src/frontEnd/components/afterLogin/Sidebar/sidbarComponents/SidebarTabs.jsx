@@ -13,8 +13,7 @@ const SidebarTabs = () => {
   const { setDrawerOpen, pageNumber, handlePageNumber } =
     useContext(DasboardData);
 
-  const { t, i18n } = useTranslation();
-  const { language } = i18n;
+  const { t } = useTranslation();
   const theme = useTheme();
   const colors = theme.palette;
 
@@ -39,8 +38,7 @@ const SidebarTabs = () => {
 
   const design = {
     position: "absolute",
-    left: `${language === "en" ? 0 : null}`,
-    right: `${language === "fa" ? 0 : null}`,
+    left: `0`,
     display: "flex",
     alignItems: "center",
     justifyContent: "start",

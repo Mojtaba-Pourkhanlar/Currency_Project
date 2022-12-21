@@ -70,7 +70,7 @@ const Coins = () => {
 
       <Box>
         <TextField
-          label="Search For a Crypto Currency"
+          label={t("serachCrypto")}
           variant="outlined"
           value={search}
           onChange={(e) => setSearch(e.target.value)}

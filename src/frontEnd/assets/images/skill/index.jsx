@@ -12,3 +12,4 @@ export { default as Redux } from "./redux.svg";
 export { default as Scss } from "./scss.svg";
 export { default as Telegram } from "./telegram.svg";
 export { default as Css } from "./css.svg";
+export { default as ReactNAtive } from "./reactnative.svg";

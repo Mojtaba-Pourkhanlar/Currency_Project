@@ -18,7 +18,7 @@ const TopChartMarket = () => {
     borderRadius: "20px",
   };
   return (
-    <Grid container>
+    <Grid container sx={{mb:'50px'}}>
       {allMarekts.slice(0, 3).map((item) => (
         <Grid item key={item.id} xs={12} sm={12} md={6} lg={4} sx={container}>
           <Box sx={textPosi}>

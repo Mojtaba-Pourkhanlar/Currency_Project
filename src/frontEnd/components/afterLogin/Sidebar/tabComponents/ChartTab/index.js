@@ -22,7 +22,7 @@ Chart.register(CategoryScale);
 export const ChartTab = () => {
   const { coins, setLoading } = useContext(DasboardData);
   const [allData, setAllData] = useState("");
-  const [chart, setChart] = useState([]);
+  const [chart, setChart] = useState(null);
   const [days, setDays] = useState(1);
   const { t } = useTranslation();
   const theme = useTheme();
@@ -128,55 +128,58 @@ export const ChartTab = () => {
         </Grid>
 
         <Grid item xs={12}>
-          <Line
-            data={{
-              labels: chart.map((coin) => {
-                let date = new Date(coin[0]);
-                let time =
-                  date.getHours() > 12
-                    ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-                    : `${date.getHours()}:${date.getMinutes()} AM`;
-                return days === 1 ? time : date.toLocaleDateString();
-              }),
-              datasets: [
-                {
-                  data: chart.map((coin) => coin[1]),
-                  borderColor: "#EEBC1D",
-                },
-              ],
-            }}
-            options={{
-              plugins: {
-                legend: false,
-              },
-              elements: {
-                point: {
-                  radius: 1,
-                },
-              },
-            }}
-          />
-          <div
-            style={{
-              display: "flex",
-              marginTop: 20,
-              justifyContent: "space-around",
-              width: "100%",
-            }}>
-            {chartDay.map((day) => (
-              <Button
-                variant="contained"
-                key={day.value}
-                onClick={() => {
-                  setDays(day.value);
+          {chart !== null && (
+            <>
+              <Line
+                data={{
+                  labels: chart.map((coin) => {
+                    let date = new Date(coin[0]);
+                    let time =
+                      date.getHours() > 12
+                        ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+                        : `${date.getHours()}:${date.getMinutes()} AM`;
+                    return days === 1 ? time : date.toLocaleDateString();
+                  }),
+                  datasets: [
+                    {
+                      data: chart.map((coin) => coin[1]),
+                      borderColor: "#EEBC1D",
+                    },
+                  ],
                 }}
-                selected={day.value === days}>
-                {day.label}
-              </Button>
-            ))}
-          </div>
+                options={{
+                  plugins: {
+                    legend: false,
+                  },
+                  elements: {
+                    point: {
+                      radius: 1,
+                    },
+                  },
+                }}
+              />
+              <div
+                style={{
+                  display: "flex",
+                  marginTop: 20,
+                  justifyContent: "space-around",
+                  width: "100%",
+                }}>
+                {chartDay.map((day) => (
+                  <Button
+                    variant="contained"
+                    key={day.value}
+                    onClick={() => {
+                      setDays(day.value);
+                    }}
+                    selected={day.value === days}>
+                    {day.label}
+                  </Button>
+                ))}
+              </div>
+            </>
+          )}
         </Grid>
-
       </Grid>
     </>
   );

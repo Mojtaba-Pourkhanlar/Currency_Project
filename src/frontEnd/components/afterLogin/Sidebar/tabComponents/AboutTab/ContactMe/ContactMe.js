@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
+import { Github, Linkdin } from "frontEnd/assets/images/skill";
 import { useTranslation } from "react-i18next";
-import { Github, Linkdin } from "../../../../../../assets/images/skill";
 
 const ContactMe = () => {
   const { t } = useTranslation();

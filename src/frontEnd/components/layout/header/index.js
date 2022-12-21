@@ -22,7 +22,6 @@ import { Language, Theme } from "frontEnd/once";
 export const Header = ({ login = null }) => {
   const [isOpen, setIsOpen] = useState({
     left: false,
-    right: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -32,7 +31,7 @@ export const Header = ({ login = null }) => {
     setIsOpen({ ...isOpen, [anchor]: open });
   };
 
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
 
   const Hamburger = styled("div")(({ theme }) => ({
     [theme.breakpoints.up("md")]: {
@@ -52,7 +51,7 @@ export const Header = ({ login = null }) => {
               container
               sx={{ width: "100%", display: "flex", alignItems: "center" }}>
               <Grid item xs={1} md={0}>
-                {[i18n.language === "en" ? "left" : "right"].map((anchor) => (
+                {["left"].map((anchor) => (
                   <React.Fragment key={anchor}>
                     <Hamburger>
                       <IconButton

@@ -13,6 +13,7 @@ import {
   React,
   Redux,
   Scss,
+ReactNAtive
 } from "frontEnd/assets/images/skill";
 import Skill from "./Skill";
 
@@ -23,6 +24,7 @@ const Skills = () => {
     css,
     nextJs,
     reactJs,
+    reactNA,
     git,
     scss,
     redux,
@@ -62,48 +64,55 @@ const Skills = () => {
     },
     {
       id: 4,
+      name: "React Native",
+      icon: ReactNAtive,
+      color: "#00D8FF",
+      value: reactNA,
+    },
+    {
+      id: 5,
       name: "Materialui",
       icon: Mui,
       color: "#0081CB",
       value: mui,
     },
     {
-      id: 5,
+      id: 6,
       name: "Git",
       icon: Git,
       color: "#DE4C36",
       value: git,
     },
     {
-      id: 6,
+      id: 7,
       name: "Next",
       icon: Next,
       color: "#000000",
       value: nextJs,
     },
     {
-      id: 7,
+      id: 8,
       name: "Sass",
       icon: Scss,
       color: "#CC6699",
       value: scss,
     },
     {
-      id: 8,
+      id: 9,
       name: "Redux",
       icon: Redux,
       color: "#764ABC",
       value: redux,
     },
     {
-      id: 9,
+      id: 10,
       name: "Bootstrap",
       icon: Bootstrap,
       color: "#563D7C",
       value: boot,
     },
     {
-      id: 10,
+      id: 11,
       name: "Graphql",
       icon: Graphql,
       color: "#E535AB",

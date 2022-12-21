@@ -18,6 +18,7 @@ const Dashboard = () => {
   const [css, setCss] = useState(0);
   const [nextJs, setNextJs] = useState(0);
   const [reactJs, setReactJs] = useState(0);
+  const [reactNA, setReactNA] = useState(0);
   const [git, setGit] = useState(0);
   const [scss, setScss] = useState(0);
   const [redux, setRedux] = useState(0);
@@ -60,7 +61,11 @@ const Dashboard = () => {
 
       setReactJs((oldProgress) => {
         const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 75);
+        return Math.min(oldProgress + diff, 85);
+      });
+      setReactNA((oldProgress) => {
+        const diff = Math.random() * 10;
+        return Math.min(oldProgress + diff, 60);
       });
 
       setNextJs((oldProgress) => {
@@ -70,17 +75,17 @@ const Dashboard = () => {
 
       setGit((oldProgress) => {
         const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 50);
+        return Math.min(oldProgress + diff, 60);
       });
 
       setScss((oldProgress) => {
         const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 80);
+        return Math.min(oldProgress + diff, 85);
       });
 
       setRedux((oldProgress) => {
         const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 55);
+        return Math.min(oldProgress + diff, 65);
       });
 
       setMui((oldProgress) => {
@@ -126,6 +131,7 @@ const Dashboard = () => {
         css,
         nextJs,
         reactJs,
+        reactNA,
         git,
         scss,
         redux,
@@ -137,6 +143,7 @@ const Dashboard = () => {
         setCss,
         setNextJs,
         setReactJs,
+        setReactNA,
         setGit,
         setScss,
         setRedux,

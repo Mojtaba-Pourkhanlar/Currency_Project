@@ -70,7 +70,7 @@ export const FormLogin = () => {
       <form onSubmit={formik.handleSubmit}>
         <CustomeTextField
           name="email"
-          label="Email"
+          label={t("email")}
           value={formik.values.email}
           onChange={formik.handleChange}
           error={formik.touched.email && Boolean(formik.errors.email)}
@@ -79,22 +79,20 @@ export const FormLogin = () => {
         <Box sx={password}>
           <CustomeTextField
             name="password"
-            label="Password"
+            label={t("pass")}
             type={passwordType ? "text" : "password"}
             value={formik.values.password}
             onChange={formik.handleChange}
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
-          {i18n.language === "en" && (
-            <Box component="span" sx={passToggle} onClick={togglePassword}>
-              {passwordType ? (
-                <VisibilityOutlined color="success" />
-              ) : (
-                <VisibilityOffOutlined color="error" />
-              )}
-            </Box>
-          )}
+          <Box component="span" sx={passToggle} onClick={togglePassword}>
+            {passwordType ? (
+              <VisibilityOutlined color="success" />
+            ) : (
+              <VisibilityOffOutlined color="error" />
+            )}
+          </Box>
         </Box>
         <Button
           color="success"
@@ -102,7 +100,7 @@ export const FormLogin = () => {
           fullWidth
           sx={{ mt: "20px", height: "50px" }}
           type="submit">
-          Submit
+          {t("sub")}
         </Button>
       </form>
     </div>

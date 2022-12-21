@@ -13,12 +13,12 @@ const DetailCoin = ({ coin }) => {
     current_price,
     low_24h,
   } = coin;
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const theme = useTheme();
   const colors = theme.palette;
 
   const alignText = {
-    textAlign: i18n.language === "en" ? "left" : "right",
+    textAlign: "left",
   };
 
   const displayBox = {
@@ -30,7 +30,7 @@ const DetailCoin = ({ coin }) => {
   const boxContainer = {
     display: { xs: "block", lg: "flex" },
     justifyContent: "space-between",
-    textAlign: i18n.language === "en" ? "left" : "right",
+    textAlign: "left",
   };
 
   return (
