@@ -2,27 +2,35 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@mui/icons-material";
-import { Box, Button } from "@mui/material";
+import { Backdrop, Box, Button, CircularProgress } from "@mui/material";
 import { LoginUse } from "frontEnd/services/user";
 import { CustomeTextField, Toastify } from "frontEnd/helpers";
 import { useTranslation } from "react-i18next";
 
 export const FormLogin = () => {
+  const [loading, setLoading] = useState(false);
   const [passwordType, setPasswordType] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const togglePassword = () => {
     setPasswordType(!passwordType);
   };
 
   const submitHandler = async (user) => {
     try {
+      setLoading(true);
+
       const status = await LoginUse(user);
       if (status === 200) {
         Toastify("login Successfully 😉", "success");
+        setLoading(false);
+
         window.location = "/dashboard";
+      } else {
+        setLoading(false);
       }
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   };
 
@@ -94,14 +102,25 @@ export const FormLogin = () => {
             )}
           </Box>
         </Box>
-        <Button
-          color="success"
-          variant="contained"
-          fullWidth
-          sx={{ mt: "20px", height: "50px" }}
-          type="submit">
-          {t("sub")}
-        </Button>
+        {loading ? (
+          <Backdrop
+            sx={{
+              color: "#FFEB3B",
+              zIndex: (theme) => theme.zIndex.drawer + 1,
+            }}
+            open={loading}>
+            <CircularProgress sx={{ color: "#FFEB3B" }} />
+          </Backdrop>
+        ) : (
+          <Button
+            color="success"
+            variant="contained"
+            fullWidth
+            sx={{ mt: "20px", height: "50px" }}
+            type="submit">
+            {t("sin")}
+          </Button>
+        )}
       </form>
     </div>
   );

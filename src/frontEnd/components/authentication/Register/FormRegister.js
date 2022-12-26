@@ -2,29 +2,34 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@mui/icons-material";
-import { Box, Button } from "@mui/material";
+import { Backdrop, Box, Button, CircularProgress } from "@mui/material";
 import { RegisterUser } from "frontEnd/services/user";
 import { CustomeTextField, Toastify } from "frontEnd/helpers";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { type } from "@testing-library/user-event/dist/type";
 
 export const FormRegister = () => {
   const [passwordType, setPasswordType] = useState(false);
-  const { t, i18n } = useTranslation();
+  const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
   const togglePassword = () => {
     setPasswordType(!passwordType);
   };
   const navigate = useNavigate();
   const submitHandler = async (user) => {
     try {
+      setLoading(true);
       const status = await RegisterUser(user);
       if (status === 200) {
         Toastify("Register Successfully 😉", "success");
+        setLoading(false);
         navigate("/login");
+      } else {
+        setLoading(false);
       }
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   };
 
@@ -61,8 +66,7 @@ export const FormRegister = () => {
     outline: "none",
     height: "100%",
     width: {
-      sm: "400px",
-      md: "300px",
+      sm: "100%",
       lg: "400px",
     },
   };
@@ -149,14 +153,26 @@ export const FormRegister = () => {
             )}
           </Box>
         </Box>
-        <Button
-          color="success"
-          variant="contained"
-          fullWidth
-          sx={{ mt: "20px", height: "50px" }}
-          type="submit">
-          {t("sin")}
-        </Button>
+
+        {loading ? (
+          <Backdrop
+            sx={{
+              color: "#FFEB3B",
+              zIndex: (theme) => theme.zIndex.drawer + 1,
+            }}
+            open={loading}>
+            <CircularProgress sx={{ color: "#FFEB3B" }} />
+          </Backdrop>
+        ) : (
+          <Button
+            color="success"
+            variant="contained"
+            fullWidth
+            sx={{ mt: "20px", height: "50px" }}
+            type="submit">
+            {t("sin")}
+          </Button>
+        )}
       </form>
     </div>
   );
