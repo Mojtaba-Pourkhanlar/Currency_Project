@@ -4,11 +4,18 @@ import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
 import { styled } from "@mui/material/styles";
-import { Box, Divider, Grid, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Grid,
+  Skeleton,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import Chartjs from "./Chartjs";
 
 const Layout02 = () => {
-  const { allMarekts } = useContext(DasboardData);
+  const { allMarekts, loading } = useContext(DasboardData);
 
   const theme = useTheme();
   const colors = theme.palette;
@@ -25,36 +32,49 @@ const Layout02 = () => {
   return (
     <>
       <Grid container spacing={2} mt="30px">
-        <Grid item xs={12} sm={12} lg={8}>
-          <Chartjs />
-        </Grid>
-        <Grid item xs={12} sm={12} lg={4}>
-          {allMarekts.slice(30, 34).map((item) => (
-            <>
-              <Box key={item.id}>
-                <Box display="flex" justifyContent="space-between">
-                  <Typography>{item.symbol.toUpperCase()}</Typography>
-                  <Typography
-                    sx={{
-                      color: `${
-                        item.price_change_percentage_24h > 0
-                          ? "#00cc00"
-                          : "#ff2626"
-                      }`,
-                    }}>
-                    {" "}
-                    {item.price_change_percentage_24h.toFixed(2)}%
-                  </Typography>
+        {loading ? (
+          <Grid item xs={12} sm={12} lg={8}>
+            <Skeleton variant="rounded" height={300} animation="wave" />
+          </Grid>
+        ) : (
+          <Grid item xs={12} sm={12} lg={8}>
+            <Chartjs />
+          </Grid>
+        )}
+
+        {loading ? (
+          <Grid item xs={12} sm={12} lg={4}>
+            <Skeleton variant="rounded" height={300} animation="wave" />
+          </Grid>
+        ) : (
+          <Grid item xs={12} sm={12} lg={4}>
+            {allMarekts.slice(30, 34).map((item) => (
+              <>
+                <Box key={item.id}>
+                  <Box display="flex" justifyContent="space-between">
+                    <Typography>{item.symbol.toUpperCase()}</Typography>
+                    <Typography
+                      sx={{
+                        color: `${
+                          item.price_change_percentage_24h > 0
+                            ? "#00cc00"
+                            : "#ff2626"
+                        }`,
+                      }}>
+                      {" "}
+                      {item.price_change_percentage_24h.toFixed(2)}%
+                    </Typography>
+                  </Box>
+                  <BorderLinearProgress
+                    variant="determinate"
+                    value={item.atl_change_percentage / 10}
+                  />
                 </Box>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={item.atl_change_percentage / 10}
-                />
-              </Box>
-              <Divider sx={{ m: "25px 0" }} />
-            </>
-          ))}
-        </Grid>
+                <Divider sx={{ m: "25px 0" }} />
+              </>
+            ))}
+          </Grid>
+        )}
       </Grid>
     </>
   );

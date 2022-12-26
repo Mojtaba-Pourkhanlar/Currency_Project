@@ -16,7 +16,6 @@ const Banner = () => {
     });
   }, []);
 
-
   const imageContainer = {
     position: "absolute",
     top: "50px",
@@ -48,8 +47,7 @@ const Banner = () => {
   };
 
   return (
-    <Grid container sx={{ minHeight: "83vh"}}>
-
+    <Grid container sx={{ minHeight: "83vh" }}>
       <Container maxWidth="xl">
         <Box sx={{ m: "70px 0 0", width: "100%" }}>
           <Grid item xs={12}>
@@ -59,6 +57,8 @@ const Banner = () => {
                 textAlign: theme.palette.mode === "light" ? "start" : "center",
                 color: "#fff",
                 pt: "50px",
+                position: "relative",
+                zIndex: "100",
               }}>
               {t("cryptocurrency")}
             </Typography>
@@ -68,6 +68,8 @@ const Banner = () => {
                 textAlign: theme.palette.mode === "light" ? "start" : "center",
                 color: "#ccc",
                 pt: "15px",
+                position: "relative",
+                zIndex: "100",
               }}>
               {t("infoCrypto")}
             </Typography>

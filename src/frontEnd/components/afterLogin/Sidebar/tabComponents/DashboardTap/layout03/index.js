@@ -1,8 +1,10 @@
-import { Grid, Typography } from "@mui/material";
-import React from "react";
+import { Grid, Skeleton, Typography } from "@mui/material";
+import { DasboardData } from "frontEnd/context/Dahsboard";
+import React, { useContext } from "react";
 import { DoughnutChart } from "./DoughnutChart";
 
 const Layout03 = () => {
+  const { loading } = useContext(DasboardData);
   const demo = {
     display: {
       xs: "none",
@@ -25,9 +27,16 @@ const Layout03 = () => {
       <Grid item xs={12} lg={8}>
         <Typography sx={demo}>Coming Soon</Typography>
       </Grid>
-      <Grid item xs={12} lg={4} align="center">
-        <DoughnutChart />
-      </Grid>
+
+      {loading ? (
+        <Grid item xs={12} lg={4} align="center" sx={{ mt: "80px" }}>
+          <Skeleton variant="rounded" height={300} animation="wave" />
+        </Grid>
+      ) : (
+        <Grid item xs={12} lg={4} align="center">
+          <DoughnutChart />
+        </Grid>
+      )}
     </Grid>
   );
 };

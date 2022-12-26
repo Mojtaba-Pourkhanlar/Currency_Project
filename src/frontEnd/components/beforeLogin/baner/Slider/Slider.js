@@ -26,7 +26,9 @@ const Gallery = () => {
   return (
     <Box
       component="div"
-      sx={{ height: "50%", display: "flex", alignItems: "center" }}>
+
+    
+      sx={{ height: "50%", display: "flex", alignItems: "center", position:'relative', zIndex: "100", }}>
       <AliceCarousel
         mouseTracking
         infinite

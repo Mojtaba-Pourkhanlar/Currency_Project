@@ -1,8 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Box, Typography } from "@mui/material";
 
-
-
 const Card = ({ image, title, price, market }) => {
   const { t } = useTranslation();
 
@@ -19,7 +17,7 @@ const Card = ({ image, title, price, market }) => {
       <img src={image} width="80" alt="Product" style={{ marginBottom: 10 }} />
 
       <Box sx={{ display: "flex" }}>
-        <Typography variant="h4" sx={{ color: "#fff" , mr:'10px'}}>
+        <Typography variant="h4" sx={{ color: "#fff", mr: "10px" }}>
           {t(`${title}`)}
         </Typography>
 
